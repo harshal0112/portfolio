@@ -1,0 +1,37 @@
+{"projects" :  [
+    {
+        "name": "YouTube Clone",
+        "id" : 1,
+        "imageSrc" : "https://i.ibb.co/p2DryLc/You-Tube-Clone-Home.png",
+        "href" : "https://harshal0112.github.io/youtube-clone/"
+    },
+    {
+        "name": "Periodic Table",
+        "id" : 2,
+        "imageSrc" : "https://i.ibb.co/3cWCQ5t/Periodic-Table.png",
+        "href" : "https://periodictable-one.vercel.app/"
+    },
+    {
+        "name": "TextUtils - Text Editor",
+        "id" : 3,
+        "imageSrc" : "https://i.ibb.co/TbBp4tX/Textutils-A-Text-Editor.png",
+        "href" : "https://textutils-harshal.vercel.app/"
+    },
+    {
+        "name": "Spotify - Clone",
+        "id" : 4,
+        "imageSrc" : "https://i.ibb.co/wC2Fn9T/Spotify-Clone.png"
+    },
+    {
+        "name": "fifth",
+        "id" : 5,
+        "imageSrc" : "https://i.ibb.co/TbBp4tX/Textutils-A-Text-Editor.png",
+        "href" : "https://textutils-harshal.vercel.app/"
+    },
+    {
+        "name": "sixth",
+        "id" : 6,
+        "imageSrc" : "https://i.ibb.co/TbBp4tX/Textutils-A-Text-Editor.png",
+        "href" : "https://textutils-harshal.vercel.app/"
+    }
+]}
