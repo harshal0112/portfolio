@@ -5,6 +5,7 @@ import { CgMouse } from "react-icons/cg";
 import { AiOutlineSend } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import { useNav } from "./hooks/useNav";
 
 function Home(props) {
   const [textIndex, setTextIndex] = useState(0);
@@ -37,12 +38,13 @@ function Home(props) {
     },
   };
 
+  const homeRef = useNav("home");
+
   return (
     <>
       <section
-        className={`home min-h-screen section snap-center w-full ${
-          props.mode === "dark" ? "bg-gray-800 text-gray-50" : ""
-        }`}
+        ref={homeRef}
+        className={`home min-h-screen section snap-center w-full`}
         id="home"
       >
         <div className="container mx-auto px-4 flex items-center justify-center h-[100vh] relative pb-14 md:pb-0">
@@ -60,17 +62,19 @@ function Home(props) {
             </div>
           </div>
           <div className="flex items-center flex-col gap-0 md:gap-10 lg:gap-28 md:flex-row">
-            <div className="flex md:hidden items-center">
-              <div className="social-icons flex flex-col gap-8 text-xl text-indigo-600 ml-4">
-                <button className="hover:text-indigo-700">
-                  <FaLinkedinIn />
-                </button>
-                <button className="hover:text-indigo-700">
-                  <FaGithub />
-                </button>
-                <button className="hover:text-indigo-700">
-                  <FaInstagram />
-                </button>
+            <div className="flex md:hidden items-center container">
+              <div className="">
+                <div className="social-icons flex flex-col gap-8 text-xl text-indigo-600">
+                  <button className="hover:text-indigo-700">
+                    <FaLinkedinIn />
+                  </button>
+                  <button className="hover:text-indigo-700">
+                    <FaGithub />
+                  </button>
+                  <button className="hover:text-indigo-700">
+                    <FaInstagram />
+                  </button>
+                </div>
               </div>
               <div
                 className={`h-[340px] w-[350px] pic-bg bg-indigo-800 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 md:hidden ${
@@ -107,9 +111,9 @@ function Home(props) {
                   );
                 })}
               </motion.div>
-              <div className="opacity-70 leading-relaxed">
-                High level experience in web design and <br /> development
-                knowledge, producing <br /> quality work.
+              <div className="opacity-70 leading-relaxed max-w-sm">
+                High level experience in web design and development knowledge,
+                producing quality work.
               </div>
               <br />
               <div>
@@ -143,10 +147,10 @@ function Home(props) {
                 offset={0}
               >
                 <button
-                  className={`hidden md:flex items-center absolute bottom-10 text-sm hover:bg-slate-200 hover:bg-opacity-50 p-2 rounded-xl ${
+                  className={`hidden md:flex items-center absolute bottom-10 text-sm p-2 rounded-xl ${
                     props.mode === "dark"
-                      ? "hover:bg-gray-700 hover:bg-opacity-30"
-                      : ""
+                      ? "hover:bg-gray-700 hover:bg-opacity-50"
+                      : "hover:bg-slate-200 hover:bg-opacity-50"
                   }`}
                 >
                   <div className="text-indigo-800 text-2xl">

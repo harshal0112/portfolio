@@ -1,14 +1,15 @@
 import React from "react";
 import { CiCalendarDate } from "react-icons/ci";
 import { motion } from "framer-motion";
+import { useNav } from "./hooks/useNav";
 
 function Education(props) {
+  const educationRef = useNav("education");
   return (
     <div>
       <div
-        className={`min-h-screen py-16 w-full flex justify-center items-center text-6xl snap-start ${
-          props.mode === "dark" ? "bg-gray-800 text-gray-50" : ""
-        }`}
+        ref={educationRef}
+        className={`min-h-screen py-16 w-full flex justify-center items-center text-6xl snap-start`}
         id="education"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { NavContext } from "./context/NavContext";
 
 function Navbar(props) {
   const handleNavClick = (event) => {
     document.getElementById(event).scrollIntoView({ behavior: "smooth" });
   };
+
+  const { activeLinkId } = useContext(NavContext);
+  console.log(activeLinkId);
   return (
     <div
       className={`hidden md:block shadow-xl top-0 w-full fixed z-10 bg-opacity-95 ${
@@ -14,32 +18,95 @@ function Navbar(props) {
       <div className="nav flex items-center py-4 overflow-x-hidden justify-center px-4 xl:px-24">
         <div className="container flex">
           <div
-            className="flex items-center font-bold"
+            className="flex items-center font-bold cursor-pointer"
             style={{ fontFamily: "Tilt Prism" }}
+            onClick={() => handleNavClick("home")}
           >
             Harshal
           </div>
           <div className="flex ml-auto">
             <div className="flex gap-4 lg:gap-8">
-              <div className="hover:text-indigo-600 hover:contrast-150">
-                <button onClick={() => handleNavClick("home")}>Home</button>
+              <div
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                  activeLinkId === "home" ? "before:w-full" : ""
+                }`}
+              >
+                <button
+                  className={`${
+                    activeLinkId === "home" ? "text-indigo-500" : ""
+                  }`}
+                  onClick={() => handleNavClick("home")}
+                >
+                  Home
+                </button>
               </div>
-              <div className="hover:text-indigo-600 hover:contrast-150">
-                <button onClick={() => handleNavClick("about")}>About</button>
+              <div
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                  activeLinkId === "about" ? "before:w-full" : ""
+                }`}
+              >
+                <button
+                  className={`${
+                    activeLinkId === "about" ? "text-indigo-500" : ""
+                  }`}
+                  onClick={() => handleNavClick("about")}
+                >
+                  About
+                </button>
               </div>
-              <div>
-                <button onClick={() => handleNavClick("skills")}>Skills</button>
+              <div
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                  activeLinkId === "skills" ? "before:w-full" : ""
+                }`}
+              >
+                <button
+                  className={`${
+                    activeLinkId === "skills" ? "text-indigo-500" : ""
+                  }`}
+                  onClick={() => handleNavClick("skills")}
+                >
+                  Skills
+                </button>
               </div>
-              <div>
-                <button onClick={() => handleNavClick("education")}>
+              <div
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                  activeLinkId === "education" ? "before:w-full" : ""
+                }`}
+              >
+                <button
+                  className={`${
+                    activeLinkId === "education" ? "text-indigo-500" : ""
+                  }`}
+                  onClick={() => handleNavClick("education")}
+                >
                   Education
                 </button>
               </div>
-              <div>
-                <button onClick={() => handleNavClick("work")}>Work</button>
+              <div
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                  activeLinkId === "work" ? "before:w-full" : ""
+                }`}
+              >
+                <button
+                  className={`${
+                    activeLinkId === "work" ? "text-indigo-500" : ""
+                  }`}
+                  onClick={() => handleNavClick("work")}
+                >
+                  Work
+                </button>
               </div>
-              <div>
-                <button onClick={() => handleNavClick("contact")}>
+              <div
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                  activeLinkId === "contact" ? "before:w-full" : ""
+                }`}
+              >
+                <button
+                  className={`${
+                    activeLinkId === "contact" ? "text-indigo-500" : ""
+                  }`}
+                  onClick={() => handleNavClick("contact")}
+                >
                   Contact
                 </button>
               </div>

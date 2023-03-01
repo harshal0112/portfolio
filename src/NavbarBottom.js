@@ -20,12 +20,14 @@ function NavbarBottom(props) {
     <div>
       {isBottomMenu === "open" && (
         <div
-          className="h-screen bg-black bg-opacity-40 w-full fixed bottom-0 z-10 sm:hidden"
+          className="h-screen bg-black bg-opacity-40 w-full fixed bottom-0 z-10 md:hidden"
           onClick={() => setIsBottomMenu("close")}
         >
           <motion.div
-            className={`bg-white px-6 py-8 grid grid-cols-3 grid-rows-2 gap-8 absolute bottom-12 w-full text-base md:hidden ${
-              props.mode === "dark" ? "bg-gray-800 text-gray-50" : ""
+            className={`px-6 py-8 grid grid-cols-3 grid-rows-2 gap-8 absolute bottom-12 w-full text-base md:hidden ${
+              props.mode === "dark"
+                ? "bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-50"
+                : "bg-white"
             }`}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -71,7 +73,7 @@ function NavbarBottom(props) {
               spy={true}
               duration={500}
               smooth={true}
-              offset={70}
+              offset={40}
             >
               <div
                 className="flex flex-col items-center justify-center "
@@ -109,8 +111,8 @@ function NavbarBottom(props) {
         </div>
       )}
       <div
-        className={`flex bg-white px-6 py-4 fixed w-full bottom-0 md:hidden shadow-2xl shadow-black z-20 ${
-          props.mode === "dark" ? "bg-gray-900 text-gray-50" : ""
+        className={`flex px-6 py-4 fixed w-full bottom-0 md:hidden shadow-2xl shadow-black z-20 ${
+          props.mode === "dark" ? "bg-gray-900 text-gray-50" : "bg-white"
         }`}
       >
         <div
@@ -119,7 +121,7 @@ function NavbarBottom(props) {
         >
           Harshal
         </div>
-        <div className="flex ml-auto gap-4">
+        <div className="flex ml-auto gap-6">
           <button
             className={`${isBottomMenu === "open" ? "hidden" : ""}`}
             onClick={() =>

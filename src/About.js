@@ -1,19 +1,32 @@
 import React from "react";
 import { AiOutlineDownload } from "react-icons/ai";
+import { useNav } from "./hooks/useNav";
 
 function About(props) {
+  const aboutRef = useNav("about");
+
+  const handleDownload = () => {
+    // Replace the file URL below with your own file URL
+    const fileUrl =
+      "https://drive.google.com/uc?export=download&id=1fNZTqa8MV47ITw1gwEyq7hwNurOVZCJ5";
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Cv.jpg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div>
       <div
-        className={`min-h-screen flex justify-center items-center py-10 w-full text-6xl snap-start ${
-          props.mode === "dark" ? "bg-gray-800 text-gray-50" : ""
-        }`}
+        ref={aboutRef}
+        className={`min-h-screen flex justify-center items-center py-10 w-full text-6xl snap-start`}
         id="about"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">
           <h1 className="text-5xl font-bold">About Me</h1>
           <p className="text-base opacity-60">My introduction</p>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-20 md:mt-20">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-2 lg:gap-16 md:mt-20">
             <div className=" h-80 w-96 flex items-center px-5">
               <img
                 src="https://i.ibb.co/vzn0MrD/about.jpg"
@@ -46,6 +59,7 @@ function About(props) {
                   className={`flex items-center p-4 bg-indigo-800 rounded-lg shadow-lg active:scale-95 hover:contrast-150 ${
                     props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                   }`}
+                  onClick={() => handleDownload()}
                 >
                   Download CV&nbsp;
                   <AiOutlineDownload />

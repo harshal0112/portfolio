@@ -1,13 +1,14 @@
 import React from "react";
+import { useNav } from "./hooks/useNav";
 import data from "./Projects.json";
 
 function Work(props) {
+  const workRef = useNav("work");
   return (
     <div>
-      <div
-        className={`w-full min-h-screen flex items-center justify-center snap-center pb-16 sm:pt-16 ${
-          props.mode === "dark" ? "bg-gray-800 text-gray-50" : ""
-        }`}
+      <section
+        ref={workRef}
+        className={`w-full min-h-screen flex items-center justify-center snap-center pb-16 sm:pt-16`}
         id="work"
       >
         <div className="container overflow-hidden">
@@ -62,7 +63,7 @@ function Work(props) {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

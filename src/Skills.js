@@ -4,21 +4,22 @@ import { HiChevronDown } from "react-icons/hi";
 import { FiDatabase } from "react-icons/fi";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useNav } from "./hooks/useNav";
 
 function Skills(props) {
+  const skillsRef = useNav("skills");
   const [accordion, setAccordion] = useState("frontend");
   return (
     <div>
       <div
-        className={`w-full min-h-screen flex justify-center items-center py-20 text-6xl snap-center ${
-          props.mode === "dark" ? "bg-gray-800 text-gray-50" : ""
-        }`}
+        ref={skillsRef}
+        className={`w-full min-h-screen flex justify-center items-center py-20 text-6xl snap-center`}
         id="skills"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">
           <h1 className="text-5xl font-bold">Skills</h1>
           <p className="text-base opacity-60">My technical level</p>
-          <div className="flex flex-col md:flex-row gap-0 md:gap-20 mt-10 md:mt-20">
+          <div className="flex flex-col md:flex-row gap-0 md:gap-2 lg:gap-16 mt-10 md:mt-20">
             <div className=" h-auto w-96 flex flex-col items-center px-5 text-base md:p-5">
               <div
                 className="w-full font-bold text-lg flex justify-between items-center mb-4 cursor-pointer"

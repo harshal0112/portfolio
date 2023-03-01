@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
+import { useNav } from "./hooks/useNav";
 
 function Contact(props) {
+  const contactRef = useNav("contact");
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+
   return (
     <div>
       <div
-        className={`w-full min-h-screen flex items-center justify-center text-6xl snap-center ${
-          props.mode === "dark" ? "bg-gray-800 text-gray-50" : ""
-        }`}
+        ref={contactRef}
+        className={`w-full min-h-screen flex items-center justify-center text-6xl snap-center`}
         id="contact"
       >
         <div className="h-auto py-5 md:py-20 w-full text-6xl snap-start">
@@ -51,50 +55,78 @@ function Contact(props) {
                   </div>
                 </div>
               </div>
-              <div className="w-auto h-full flex flex-col gap-6 text-base">
+              <form
+                className="w-auto h-full flex flex-col gap-6 text-base"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="bd31cde1-0890-4213-824b-454415d3efa8"
+                />
+                <input type="hidden" name="subject" value={subject} />
+                <input
+                  type="hidden"
+                  name="from_name"
+                  value={`Portfolio - ${name}`}
+                />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="https://web3forms.com/success"
+                />
+
                 <div className="">
                   <input
                     type="text"
-                    name="name"
+                    name="Name"
                     placeholder="Name"
+                    onChange={(e) => setName(e.target.value)}
                     className="rounded-md h-16 bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600"
+                    required
                   />
                 </div>
                 <div className="">
                   <input
                     type="email"
-                    name="email"
+                    name="Email"
                     placeholder="Email"
                     className="rounded-md h-16 bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600"
+                    required
                   />
                 </div>
                 <div className="">
                   <input
                     type="text"
-                    name="project"
-                    placeholder="Project"
+                    name="Subject"
+                    placeholder="Subject"
+                    onChange={(e) => setSubject(e.target.value)}
                     className="rounded-md h-16 bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600"
+                    required
                   />
                 </div>
                 <div className="">
                   <textarea
                     type="text"
-                    name="message"
+                    name="Message"
                     placeholder="Message"
                     className="rounded-md bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600 resize-none"
                     rows={4}
+                    required
                   ></textarea>
                 </div>
                 <button
                   className={`bg-indigo-800 p-4 flex justify-center items-center rounded-lg text-white active:scale-95 transition-all shadow-lg hover:contrast-150 ${
                     props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                   }`}
+                  type="submit"
                 >
                   <div className="flex items-center gap-2">
                     Send Message <AiOutlineSend />
                   </div>
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
