@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { NavContext } from "./context/NavContext";
 
@@ -9,6 +9,30 @@ function Navbar(props) {
 
   const { activeLinkId } = useContext(NavContext);
   console.log(activeLinkId);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        document.title = "Come Back to Portfolio";
+      } else {
+        document.title =
+          "My Portfolio - " +
+          activeLinkId.charAt(0).toUpperCase() +
+          activeLinkId.slice(1);
+      }
+    };
+
+    document.title =
+      "My Portfolio - " +
+      activeLinkId.charAt(0).toUpperCase() +
+      activeLinkId.slice(1);
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [activeLinkId]);
   return (
     <div
       className={`hidden md:block shadow-xl top-0 w-full fixed z-10 bg-opacity-95 ${

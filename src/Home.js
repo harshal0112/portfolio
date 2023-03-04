@@ -121,6 +121,11 @@ function Home(props) {
                   className={`bg-indigo-800 p-[10px] rounded-lg text-white flex items-center gap-2 shadow-lg active:scale-95 transition-all transform hover:contrast-150 ${
                     props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                   }`}
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      .scrollIntoView({ behavior: "smooth" })
+                  }
                 >
                   Contact Me <AiOutlineSend />
                 </button>
