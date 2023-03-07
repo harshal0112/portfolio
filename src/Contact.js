@@ -24,7 +24,7 @@ function Contact(props) {
             <div className="h-auto w-auto mt-10 flex flex-col md:flex-row gap-10 mb-14 md:mb-0">
               <div className="w-1/2 h-full flex flex-col gap-10">
                 <div className="w-full flex items-center gap-4">
-                  <div className="text-3xl text-indigo-600">
+                  <div className="text-3xl text-indigo-500">
                     <BsTelephone />
                   </div>
                   <div className="flex flex-col">
@@ -33,7 +33,7 @@ function Contact(props) {
                   </div>
                 </div>
                 <div className="w-full flex items-center gap-4">
-                  <div className="text-3xl text-indigo-600">
+                  <div className="text-3xl text-indigo-500">
                     <MdOutlineMail />
                   </div>
                   <div className="flex flex-col">
@@ -44,7 +44,7 @@ function Contact(props) {
                   </div>
                 </div>
                 <div className="w-full flex items-center gap-4">
-                  <div className="text-3xl text-indigo-600">
+                  <div className="text-3xl text-indigo-500">
                     <SlLocationPin />
                   </div>
                   <div className="flex flex-col">
@@ -117,7 +117,7 @@ function Contact(props) {
                   ></textarea>
                 </div>
                 <button
-                  className={`bg-indigo-800 p-4 flex justify-center items-center rounded-lg text-white active:scale-95 transition-all shadow-lg hover:contrast-150 ${
+                  className={`bg-indigo-500 p-4 flex justify-center items-center rounded-lg text-white active:scale-95 transition-all shadow-lg hover:contrast-150 ${
                     props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                   }`}
                   type="submit"

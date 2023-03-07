@@ -26,7 +26,7 @@ function Skills(props) {
                 onClick={() => setAccordion("frontend")}
               >
                 <div className="flex items-center gap-3">
-                  <div className="text-3xl text-indigo-600">
+                  <div className="text-3xl text-indigo-500">
                     <BsBraces />
                   </div>
                   <div className="flex flex-col">
@@ -50,10 +50,10 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       HTML<div>90%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "90%" }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -62,11 +62,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       CSS<div>80%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "80%" }}
                         transition={{ delay: 0.05 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -75,11 +75,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       JavaScript<div>60%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "60%" }}
                         transition={{ delay: 0.1 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -88,11 +88,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       React<div>85%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "85%" }}
                         transition={{ delay: 0.15 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -104,7 +104,7 @@ function Skills(props) {
                 onClick={() => setAccordion("backend")}
               >
                 <div className="flex items-center gap-3">
-                  <div className="text-3xl text-indigo-600">
+                  <div className="text-3xl text-indigo-500">
                     <FiDatabase />
                   </div>
                   <div className="flex flex-col">
@@ -128,10 +128,10 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       PHP<div>80%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "80%" }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -140,11 +140,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       Node Js<div>70%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "70%" }}
                         transition={{ delay: 0.05 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -153,11 +153,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       Firebase<div>60%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "60%" }}
                         transition={{ delay: 0.1 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -166,11 +166,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       Python<div>55%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "55%" }}
                         transition={{ delay: 0.15 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -184,7 +184,7 @@ function Skills(props) {
                 onClick={() => setAccordion("website")}
               >
                 <div className="flex items-center gap-3">
-                  <div className="text-3xl text-indigo-600">
+                  <div className="text-3xl text-indigo-500">
                     <MdOutlineDesignServices />
                   </div>
                   <div className="flex flex-col">
@@ -208,10 +208,10 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       Figma<div>90%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "90%" }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -220,11 +220,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       Sketch<div>80%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "80%" }}
                         transition={{ delay: 0.1 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -233,11 +233,11 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       Phtoshop<div>75%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "75%" }}
                         transition={{ delay: 0.2 }}
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
                     </div>
@@ -246,9 +246,9 @@ function Skills(props) {
                     <div className="flex justify-between w-full">
                       React<div>85%</div>
                     </div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                    <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <div
-                        className="bg-indigo-800 h-2 rounded-full"
+                        className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "85%" }}
                       ></div>
                     </div>
@@ -261,7 +261,7 @@ function Skills(props) {
                 onClick={() => setAccordion("")}
               >
                 <div className="flex items-center gap-3">
-                  <div className="text-3xl text-indigo-600">
+                  <div className="text-3xl text-indigo-500">
                     <FiDatabase />
                   </div>
                   <div className="flex flex-col">
@@ -286,9 +286,9 @@ function Skills(props) {
                       <div className="flex justify-between w-full">
                         PHP<div>80%</div>
                       </div>
-                      <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                      <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                         <div
-                          className="bg-indigo-800 h-2 rounded-full"
+                          className="bg-indigo-500 h-2 rounded-full"
                           style={{ width: "80%" }}
                         ></div>
                       </div>
@@ -297,9 +297,9 @@ function Skills(props) {
                       <div className="flex justify-between w-full">
                         Node Js<div>70%</div>
                       </div>
-                      <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                      <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                         <div
-                          className="bg-indigo-800 h-2 rounded-full"
+                          className="bg-indigo-500 h-2 rounded-full"
                           style={{ width: "70%" }}
                         ></div>
                       </div>
@@ -308,9 +308,9 @@ function Skills(props) {
                       <div className="flex justify-between w-full">
                         Firebase<div>60%</div>
                       </div>
-                      <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                      <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                         <div
-                          className="bg-indigo-800 h-2 rounded-full"
+                          className="bg-indigo-500 h-2 rounded-full"
                           style={{ width: "60%" }}
                         ></div>
                       </div>
@@ -319,9 +319,9 @@ function Skills(props) {
                       <div className="flex justify-between w-full">
                         Python<div>55%</div>
                       </div>
-                      <div className="w-full bg-indigo-200 rounded-full h-2 mb-4">
+                      <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                         <div
-                          className="bg-indigo-800 h-2 rounded-full"
+                          className="bg-indigo-500 h-2 rounded-full"
                           style={{ width: "55%" }}
                         ></div>
                       </div>

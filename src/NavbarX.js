@@ -51,7 +51,7 @@ function Navbar(props) {
           <div className="flex ml-auto">
             <div className="flex gap-4 lg:gap-8">
               <div
-                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-500 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
                   activeLinkId === "home" ? "before:w-full" : ""
                 }`}
               >
@@ -65,7 +65,7 @@ function Navbar(props) {
                 </button>
               </div>
               <div
-                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-500 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
                   activeLinkId === "about" ? "before:w-full" : ""
                 }`}
               >
@@ -79,7 +79,7 @@ function Navbar(props) {
                 </button>
               </div>
               <div
-                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-500 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
                   activeLinkId === "skills" ? "before:w-full" : ""
                 }`}
               >
@@ -93,7 +93,7 @@ function Navbar(props) {
                 </button>
               </div>
               <div
-                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-500 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
                   activeLinkId === "education" ? "before:w-full" : ""
                 }`}
               >
@@ -107,7 +107,7 @@ function Navbar(props) {
                 </button>
               </div>
               <div
-                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-500 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
                   activeLinkId === "work" ? "before:w-full" : ""
                 }`}
               >
@@ -121,7 +121,7 @@ function Navbar(props) {
                 </button>
               </div>
               <div
-                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-600 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
+                className={`before:h-[2px] before:transform before:duration-300 before:transition-width before:absolute before:bg-indigo-500 before:w-0 before:top-6 hover:before:w-full relative flex justify-center ${
                   activeLinkId === "contact" ? "before:w-full" : ""
                 }`}
               >

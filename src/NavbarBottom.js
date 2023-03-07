@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   FaBriefcase,
   FaFileAlt,
@@ -12,19 +12,26 @@ import {
 import { BsGrid } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
+import { NavContext } from "./context/NavContext";
 
 function NavbarBottom(props) {
   const [isBottomMenu, setIsBottomMenu] = useState("close");
+
+  const handleNavClick = (event) => {
+    document.getElementById(event).scrollIntoView({ behavior: "smooth" });
+    setIsBottomMenu("close");
+  };
+
+  const { activeLinkId } = useContext(NavContext);
   return (
     <div>
       {isBottomMenu === "open" && (
         <div
-          className="h-screen bg-black bg-opacity-40 w-full fixed bottom-0 z-10 md:hidden"
+          className="h-screen bg-black bg-opacity-40 backdrop-blur-sm w-full fixed bottom-0 z-10 md:hidden"
           onClick={() => setIsBottomMenu("close")}
         >
           <motion.div
-            className={`px-6 py-8 grid grid-cols-3 grid-rows-2 gap-8 absolute bottom-12 w-full text-base md:hidden ${
+            className={`px-6 py-8 grid grid-cols-3 grid-rows-2 gap-8 absolute bottom-12 w-full text-base md:hidden rounded-t-lg ${
               props.mode === "dark"
                 ? "bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-50"
                 : "bg-white"
@@ -35,78 +42,72 @@ function NavbarBottom(props) {
             transition={{ type: "tween" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <Link to="home" spy={true} smooth={true} duration={500}>
-              <div
-                className="flex flex-col items-center justify-center "
-                onClick={() => setIsBottomMenu("close")}
-              >
-                <div>
-                  <FaHome />
-                </div>
-                Home
-              </div>
-            </Link>
-            <Link to="about" spy={true} smooth={true} offset={0} duration={500}>
-              <div
-                className="flex flex-col items-center justify-center "
-                onClick={() => setIsBottomMenu("close")}
-              >
-                <div>
-                  <FaUser />
-                </div>
-                About
-              </div>
-            </Link>
-            <Link to="skills" spy={true} smooth={true} duration={500}>
-              <div
-                className="flex flex-col items-center justify-center "
-                onClick={() => setIsBottomMenu("close")}
-              >
-                <div>
-                  <FaFileAlt />
-                </div>
-                <h1>Skills</h1>
-              </div>
-            </Link>
-            <Link
-              to="education"
-              spy={true}
-              duration={500}
-              smooth={true}
-              offset={40}
+            <div
+              className={`flex flex-col items-center justify-center ${
+                activeLinkId === "home" ? "text-indigo-500" : ""
+              }`}
+              onClick={() => handleNavClick("home")}
             >
-              <div
-                className="flex flex-col items-center justify-center "
-                onClick={() => setIsBottomMenu("close")}
-              >
-                <div>
-                  <FaGraduationCap />
-                </div>
-                <h1>Education</h1>
+              <div>
+                <FaHome />
               </div>
-            </Link>
-            <Link to="work" smooth={true} spy={true} duration={500}>
-              <div
-                className="flex flex-col items-center justify-center "
-                onClick={() => setIsBottomMenu("close")}
-              >
-                <div>
-                  <FaBriefcase />
-                </div>
-                <h1>Work</h1>
+              Home
+            </div>
+            <div
+              className={`flex flex-col items-center justify-center ${
+                activeLinkId === "about" ? "text-indigo-500" : ""
+              }`}
+              onClick={() => handleNavClick("about")}
+            >
+              <div>
+                <FaUser />
               </div>
-            </Link>
-            <Link to="contact" smooth={true} spy={true} duration={500}>
-              <div
-                className="flex flex-col items-center justify-center"
-                onClick={() => setIsBottomMenu("close")}
-              >
-                <div>
-                  <FaPaperPlane />
-                </div>
-                <h1>Contact</h1>
+              About
+            </div>
+            <div
+              className={`flex flex-col items-center justify-center ${
+                activeLinkId === "skills" ? "text-indigo-500" : ""
+              }`}
+              onClick={() => handleNavClick("skills")}
+            >
+              <div>
+                <FaFileAlt />
               </div>
-            </Link>
+              <h1>Skills</h1>
+            </div>
+            <div
+              className={`flex flex-col items-center justify-center ${
+                activeLinkId === "education" ? "text-indigo-500" : ""
+              }`}
+              onClick={() => handleNavClick("education")}
+            >
+              <div>
+                <FaGraduationCap />
+              </div>
+              <h1>Education</h1>
+            </div>
+            <div
+              className={`flex flex-col items-center justify-center ${
+                activeLinkId === "work" ? "text-indigo-500" : ""
+              }`}
+              onClick={() => handleNavClick("work")}
+            >
+              <div>
+                <FaBriefcase />
+              </div>
+              <h1>Work</h1>
+            </div>
+            <div
+              className={`flex flex-col items-center justify-center ${
+                activeLinkId === "contact" ? "text-indigo-500" : ""
+              }`}
+              onClick={() => handleNavClick("contact")}
+            >
+              <div>
+                <FaPaperPlane />
+              </div>
+              <h1>Contact</h1>
+            </div>
           </motion.div>
         </div>
       )}

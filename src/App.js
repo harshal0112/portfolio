@@ -13,6 +13,9 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import NavProvider from "./context/NavContext";
+import Services from "./Services";
+import YouHaveAProject from "./YouHaveAProject";
+import Testimonial from "./Testimonial";
 
 function App() {
   const getActiveMode = () => {
@@ -57,12 +60,15 @@ function App() {
           <Skills mode={mode} />
           <Education mode={mode} />
           <Work mode={mode} />
+          <Services mode={mode} />
+          <YouHaveAProject />
+          <Testimonial />
           <Contact mode={mode} />
           <Footer />
           <NavbarBottom mode={mode} setMode={setMode} />
           {isVisible && (
             <Link to="home" smooth={true} spy={true} duration={500}>
-              <button className="fixed text-white p-3 rounded-md bg-indigo-600 right-2 bottom-16 md:bottom-10 md:right-6 hover:contrast-150 active:scale-95 bg-opacity-80">
+              <button className="fixed text-white p-3 rounded-md bg-indigo-600 right-2 bottom-16 md:bottom-10 md:right-6 hover:contrast-150 active:scale-95 bg-opacity-50">
                 <motion.div
                   animate={{ y: [0, -2, 0, 2, 0] }}
                   transition={{

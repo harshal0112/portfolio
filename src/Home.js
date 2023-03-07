@@ -49,14 +49,14 @@ function Home(props) {
       >
         <div className="container mx-auto px-4 flex items-center justify-center h-[100vh] relative pb-14 md:pb-0">
           <div className=" hidden md:mr-28 lg:block">
-            <div className="social-icons flex flex-col gap-8 text-xl text-indigo-600 ">
-              <button className="hover:text-indigo-700">
+            <div className="social-icons flex flex-col gap-8 text-xl text-indigo-400 ">
+              <button className="hover:text-indigo-500">
                 <FaLinkedinIn />
               </button>
-              <button className="hover:text-indigo-700">
+              <button className="hover:text-indigo-500">
                 <FaGithub />
               </button>
-              <button className="hover:text-indigo-700">
+              <button className="hover:text-indigo-500">
                 <FaInstagram />
               </button>
             </div>
@@ -64,20 +64,20 @@ function Home(props) {
           <div className="flex items-center flex-col gap-0 md:gap-10 lg:gap-28 md:flex-row">
             <div className="flex md:hidden items-center container">
               <div className="">
-                <div className="social-icons flex flex-col gap-8 text-xl text-indigo-600">
-                  <button className="hover:text-indigo-700">
+                <div className="social-icons flex flex-col gap-8 text-xl text-indigo-400">
+                  <button className="hover:text-indigo-500">
                     <FaLinkedinIn />
                   </button>
-                  <button className="hover:text-indigo-700">
+                  <button className="hover:text-indigo-500">
                     <FaGithub />
                   </button>
-                  <button className="hover:text-indigo-700">
+                  <button className="hover:text-indigo-500">
                     <FaInstagram />
                   </button>
                 </div>
               </div>
               <div
-                className={`h-[340px] w-[350px] pic-bg bg-indigo-800 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 md:hidden ${
+                className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 md:hidden ${
                   props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                 }`}
               >
@@ -90,7 +90,7 @@ function Home(props) {
             </div>
             <div className="leading-loose tracking-widest">
               <div className="text-5xl font-bold lg:flex md:block sm:flex">
-                Hi, I'am&nbsp;<div className="text-indigo-600">Harshal</div>
+                Hi, I'am&nbsp;<div className="text-indigo-400">Harshal</div>
               </div>
               <motion.div
                 key={texts[textIndex]}
@@ -118,7 +118,7 @@ function Home(props) {
               <br />
               <div>
                 <button
-                  className={`bg-indigo-800 p-[10px] rounded-lg text-white flex items-center gap-2 shadow-lg active:scale-95 transition-all transform hover:contrast-150 ${
+                  className={`bg-indigo-500 py-[10px] px-3 rounded-lg text-white flex items-center gap-2 shadow-lg active:scale-95 transition-all transform hover:contrast-150 ${
                     props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                   }`}
                   onClick={() =>
@@ -132,14 +132,14 @@ function Home(props) {
               </div>
               <br />
               <div className="hidden md:block lg:hidden">
-                <div className="social-icons flex gap-8 text-xl text-indigo-600">
-                  <button className="hover:text-indigo-700">
+                <div className="social-icons flex gap-8 text-xl text-indigo-400">
+                  <button className="hover:text-indigo-500">
                     <FaLinkedinIn />
                   </button>
-                  <button className="hover:text-indigo-700">
+                  <button className="hover:text-indigo-500">
                     <FaGithub />
                   </button>
-                  <button className="hover:text-indigo-700">
+                  <button className="hover:text-indigo-500">
                     <FaInstagram />
                   </button>
                 </div>
@@ -158,19 +158,27 @@ function Home(props) {
                       : "hover:bg-slate-200 hover:bg-opacity-50"
                   }`}
                 >
-                  <div className="text-indigo-800 text-2xl">
+                  <div className="text-indigo-400 text-2xl">
                     <CgMouse />
                   </div>
                   scroll down
-                  <div className="text-indigo-800 text-xl">
+                  <motion.div
+                    className="text-indigo-400 text-xl"
+                    animate={{ y: [0, -2, 0, 2, 0] }}
+                    transition={{
+                      duration: 1,
+                      ease: "linear",
+                      repeat: Infinity,
+                    }}
+                  >
                     <BsArrowDownShort />
-                  </div>
+                  </motion.div>
                 </button>
               </Link>
             </div>
             <div className="hidden md:block">
               <div
-                className={`h-[340px] w-[350px] pic-bg bg-indigo-800 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 ${
+                className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 ${
                   props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                 }`}
               >

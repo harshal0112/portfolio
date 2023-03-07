@@ -17,8 +17,8 @@ function Education(props) {
           <p className="text-base opacity-60">My educational journey</p>
           <div className="flex flex-col md:flex-row mt-24">
             <div className=" h-[350px] w-auto flex items-center justify-center px-5">
-              <div className="h-full w-[1px] bg-indigo-800 flex flex-col items-center justify-between relative">
-                <div className="w-4 h-4 bg-indigo-800 rounded-full flex items-center">
+              <div className="h-full w-[1px] bg-indigo-500 flex flex-col items-center justify-between relative">
+                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
                   <motion.div
                     className="h-24 w-40 absolute right-1"
                     initial={{ x: 100, opacity: 0, scale: 0 }}
@@ -32,7 +32,7 @@ function Education(props) {
                     </div>
                   </motion.div>
                 </div>
-                <div className="w-4 h-4 bg-indigo-800 rounded-full flex items-center">
+                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
                   <motion.div
                     className="h-24 w-40 absolute left-8"
                     initial={{ x: -130, opacity: 0, scale: 0 }}
@@ -46,7 +46,7 @@ function Education(props) {
                     </div>
                   </motion.div>
                 </div>
-                <div className="w-4 h-4 bg-indigo-800 rounded-full flex items-center">
+                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
                   <motion.div
                     className="h-24 w-40 absolute right-1"
                     initial={{ x: 100, opacity: 0, scale: 0 }}
@@ -60,7 +60,7 @@ function Education(props) {
                     </div>
                   </motion.div>
                 </div>
-                <div className="w-4 h-4 bg-indigo-800 rounded-full flex items-center">
+                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
                   <motion.div
                     className="h-24 w-40 absolute left-8"
                     initial={{ x: -130, opacity: 0, scale: 0 }}

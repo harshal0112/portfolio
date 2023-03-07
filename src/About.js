@@ -56,7 +56,7 @@ function About(props) {
               </div>
               <div className="text-base text-white">
                 <button
-                  className={`flex items-center p-4 bg-indigo-800 rounded-lg shadow-lg active:scale-95 hover:contrast-150 ${
+                  className={`flex items-center p-4 bg-indigo-500 rounded-lg shadow-lg active:scale-95 hover:contrast-150 ${
                     props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                   }`}
                   onClick={() => handleDownload()}
