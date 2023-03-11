@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const Testimonial = () => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -36,6 +36,7 @@ const Testimonial = () => {
           spaceBetween={50}
           slidesPerView={windowSize > 720 ? 2 : 1}
           pagination={{ clickable: true, renderBullet }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
         >
           <SwiperSlide>
             <blockquote className="p-8 cursor-grabbing mb-2">

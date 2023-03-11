@@ -4,7 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import Skills from "./Skills";
 import Education from "./Education";
-import Work from "./Work";
+// import Work from "./Work";
 import Contact from "./Contact";
 import NavbarBottom from "./NavbarBottom";
 import { Link } from "react-scroll";
@@ -16,6 +16,7 @@ import NavProvider from "./context/NavContext";
 import Services from "./Services";
 import YouHaveAProject from "./YouHaveAProject";
 import Testimonial from "./Testimonial";
+import WorkX from "./WorkX";
 
 function App() {
   const getActiveMode = () => {
@@ -26,6 +27,11 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("mode", JSON.stringify(mode));
+    if (mode === "light") {
+      document.body.style.backgroundColor = "#ffffff";
+    } else {
+      document.body.style.backgroundColor = "#111827";
+    }
   }, [mode]);
 
   const listenToScroll = () => {
@@ -59,7 +65,8 @@ function App() {
           <About mode={mode} />
           <Skills mode={mode} />
           <Education mode={mode} />
-          <Work mode={mode} />
+          {/* <Work mode={mode} /> */}
+          <WorkX />
           <Services mode={mode} />
           <YouHaveAProject />
           <Testimonial />

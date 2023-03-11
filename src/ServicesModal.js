@@ -38,7 +38,7 @@ function ServicesModal(props) {
         onClick={() => handleCloseModal()}
       >
         <motion.div
-          className={`px-8 py-8 rounded-lg flex flex-col gap-10 ${
+          className={`px-8 py-8 md:w-[420px] rounded-lg flex flex-col gap-10 ${
             props.mode === "dark" ? "bg-gray-800" : "bg-gray-50"
           }`}
           initial={{ scale: 0, opacity: 0 }}

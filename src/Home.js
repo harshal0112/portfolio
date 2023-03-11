@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { BsArrowDownShort } from "react-icons/bs";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { CgMouse } from "react-icons/cg";
@@ -39,6 +39,52 @@ function Home(props) {
   };
 
   const homeRef = useNav("home");
+
+  const animateX = {
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.3,
+        duration: 0.3,
+      },
+    },
+  };
+
+  // profile container 3d movement according to cursor--------------------------
+
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleMouseMove = (event) => {
+      const { left, top, width, height } = container.getBoundingClientRect();
+      const x = event.clientX - left;
+      const y = event.clientY - top;
+      const rotateX = (y - height / 2) / 40;
+      const rotateY = (x - width / 2) / 40;
+
+      container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    };
+
+    const handleMouseLeave = () => {
+      container.style.transform = "";
+    };
+
+    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+  // ------------------------------------------------------------------------------
 
   return (
     <>
@@ -176,11 +222,17 @@ function Home(props) {
                 </button>
               </Link>
             </div>
-            <div className="hidden md:block">
+            <motion.div
+              className="hidden md:block"
+              variants={animateX}
+              initial="hidden"
+              whileInView="visible"
+            >
               <div
                 className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 ${
                   props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
                 }`}
+                ref={containerRef}
               >
                 <img
                   src="https://i.ibb.co/ph5w74q/pnge.png"
@@ -188,7 +240,7 @@ function Home(props) {
                   className="imageLink"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

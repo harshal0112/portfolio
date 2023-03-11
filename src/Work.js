@@ -1,9 +1,22 @@
 import React from "react";
 import { useNav } from "./hooks/useNav";
 import data from "./Projects.json";
+import { motion } from "framer-motion";
 
 function Work(props) {
   const workRef = useNav("work");
+
+  const workAnimate = {
+    hidden: {
+      scale: 0,
+      opacity: 0,
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { delay: 0.3, duration: 0.4, type: "spring" },
+    },
+  };
   return (
     <div>
       <section
@@ -22,7 +35,13 @@ function Work(props) {
 
             <div className="mt-10 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {data.projects.map((product) => (
-                <div key={product.id} className="group relative">
+                <motion.div
+                  key={product.id}
+                  className="group relative"
+                  variants={workAnimate}
+                  initial="hidden"
+                  whileInView="visible"
+                >
                   <div className="min-h-44 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-44 flex items-center">
                     <img
                       src={product.imageSrc}
@@ -53,7 +72,7 @@ function Work(props) {
                       {product.price}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
             <div className="w-full flex justify-center mt-10">

@@ -8,7 +8,6 @@ function Navbar(props) {
   };
 
   const { activeLinkId } = useContext(NavContext);
-  console.log(activeLinkId);
 
   useEffect(() => {
     const handleVisibilityChange = () => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineDownload } from "react-icons/ai";
 import { useNav } from "./hooks/useNav";
+import { motion } from "framer-motion";
 
 function About(props) {
   const aboutRef = useNav("about");
@@ -16,6 +17,21 @@ function About(props) {
     link.click();
     document.body.removeChild(link);
   };
+
+  const aboutImgAnimate = {
+    hidden: {
+      y: 200,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        duration: 0.3,
+      },
+    },
+  };
   return (
     <div>
       <div
@@ -26,14 +42,19 @@ function About(props) {
         <div className="w-full flex justify-center items-center flex-col gap-2">
           <h1 className="text-5xl font-bold">About Me</h1>
           <p className="text-base opacity-60">My introduction</p>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-2 lg:gap-16 md:mt-20">
-            <div className=" h-80 w-96 flex items-center px-5">
+          <div className="flex flex-col items-center md:flex-row gap-4 md:gap-2 lg:gap-16 md:mt-20">
+            <motion.div
+              className="w-80 sm:w-96 flex justify-center items-center px-5"
+              variants={aboutImgAnimate}
+              initial="hidden"
+              whileInView="visible"
+            >
               <img
                 src="https://i.ibb.co/vzn0MrD/about.jpg"
                 alt=""
                 className="rounded-md"
               />
-            </div>
+            </motion.div>
             <div className="h-[350px] w-96 p-5 flex flex-col justify-between">
               <div className="text-base opacity-70">
                 Web developer with extensive knowledge and years of experience,

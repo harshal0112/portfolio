@@ -45,7 +45,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-center text-center text-stone-700 opacity-70 text-sm">
+        <div className="w-full flex justify-center text-center text-neutral-400 opacity-70 text-sm">
           © Harshal. All rights Reserved
         </div>
       </div>
