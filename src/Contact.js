@@ -4,11 +4,26 @@ import { BsTelephone } from "react-icons/bs";
 import { MdOutlineMail } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
 import { useNav } from "./hooks/useNav";
+import { motion } from "framer-motion";
 
 function Contact(props) {
   const contactRef = useNav("contact");
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
+
+  const textAnimate = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+    },
+    visible2: {
+      opacity: 0.6,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+    },
+  };
 
   return (
     <div>
@@ -19,8 +34,22 @@ function Contact(props) {
       >
         <div className="h-auto py-5 md:py-20 w-full text-6xl snap-start">
           <div className="w-full flex justify-center items-center flex-col gap-4">
-            <h1 className="text-5xl font-bold">Contact Me</h1>
-            <p className="text-base opacity-60">Get in touch</p>
+            <motion.h1
+              className="text-5xl font-bold"
+              variants={textAnimate}
+              initial="hidden"
+              whileInView="visible"
+            >
+              Contact Me
+            </motion.h1>
+            <motion.p
+              className="text-base opacity-60"
+              variants={textAnimate}
+              initial="hidden"
+              whileInView="visible2"
+            >
+              Get in touch
+            </motion.p>
             <div className="h-auto w-auto mt-10 flex flex-col md:flex-row gap-10 mb-14 md:mb-0">
               <div className="w-1/2 h-full flex flex-col gap-10">
                 <div className="w-full flex items-center gap-4">
@@ -118,7 +147,9 @@ function Contact(props) {
                 </div>
                 <button
                   className={`bg-indigo-500 p-4 flex justify-center items-center rounded-lg text-white active:scale-95 transition-all shadow-lg hover:contrast-150 ${
-                    props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
+                    props.mode === "dark"
+                      ? "shadow-indigo-900"
+                      : "shadow-indigo-900"
                   }`}
                   type="submit"
                 >

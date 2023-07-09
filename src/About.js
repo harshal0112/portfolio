@@ -20,16 +20,30 @@ function About(props) {
 
   const aboutImgAnimate = {
     hidden: {
-      y: 200,
       opacity: 0,
+      y: 100,
     },
     visible: {
-      y: 0,
       opacity: 1,
+      y: 0,
       transition: {
         delay: 0.1,
-        duration: 0.3,
+        duration: 0.5,
       },
+    },
+  };
+
+  const textAnimate = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.5 },
+    },
+    visible2: {
+      opacity: 0.6,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.5 },
     },
   };
   return (
@@ -40,8 +54,22 @@ function About(props) {
         id="about"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">
-          <h1 className="text-5xl font-bold">About Me</h1>
-          <p className="text-base opacity-60">My introduction</p>
+          <motion.h1
+            className="text-5xl font-bold"
+            variants={textAnimate}
+            initial="hidden"
+            whileInView="visible"
+          >
+            About Me
+          </motion.h1>
+          <motion.p
+            className="text-base opacity-60"
+            variants={textAnimate}
+            initial="hidden"
+            whileInView="visible2"
+          >
+            My introduction
+          </motion.p>
           <div className="flex flex-col items-center md:flex-row gap-4 md:gap-2 lg:gap-16 md:mt-20">
             <motion.div
               className="w-80 sm:w-96 flex justify-center items-center px-5"
@@ -56,12 +84,22 @@ function About(props) {
               />
             </motion.div>
             <div className="h-[350px] w-96 p-5 flex flex-col justify-between">
-              <div className="text-base opacity-70">
+              <motion.div
+                className="text-base opacity-70"
+                variants={textAnimate}
+                initial="hidden"
+                whileInView="visible2"
+              >
                 Web developer with extensive knowledge and years of experience,
                 working in web technologies and Ui/Ux design, delivering quality
                 work.
-              </div>
-              <div className="grid text-base grid-cols-3">
+              </motion.div>
+              <motion.div
+                className="grid text-base grid-cols-3"
+                variants={textAnimate}
+                initial="hidden"
+                whileInView="visible"
+              >
                 <div className="flex flex-col items-center justify-center text-center">
                   <div className="text-2xl font-bold">08+</div>
                   <div className="opacity-70">Years experience</div>
@@ -74,18 +112,25 @@ function About(props) {
                   <div className="text-2xl font-bold">05+</div>
                   <div className="opacity-70 text-base">Companies worked</div>
                 </div>
-              </div>
-              <div className="text-base text-white">
+              </motion.div>
+              <motion.div
+                className="text-base text-white"
+                variants={textAnimate}
+                initial="hidden"
+                whileInView="visible"
+              >
                 <button
                   className={`flex items-center p-4 bg-indigo-500 rounded-lg shadow-lg active:scale-95 hover:contrast-150 ${
-                    props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
+                    props.mode === "dark"
+                      ? "shadow-indigo-900"
+                      : "shadow-indigo-900"
                   }`}
                   onClick={() => handleDownload()}
                 >
                   Download CV&nbsp;
                   <AiOutlineDownload />
                 </button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

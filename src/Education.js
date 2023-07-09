@@ -5,6 +5,21 @@ import { useNav } from "./hooks/useNav";
 
 function Education(props) {
   const educationRef = useNav("education");
+
+  const textAnimate = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+    },
+    visible2: {
+      opacity: 0.6,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+    },
+  };
+
   return (
     <div>
       <div
@@ -13,11 +28,30 @@ function Education(props) {
         id="education"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">
-          <h1 className="text-5xl font-bold">Education</h1>
-          <p className="text-base opacity-60">My educational journey</p>
+          <motion.h1
+            className="text-5xl font-bold"
+            variants={textAnimate}
+            initial="hidden"
+            whileInView="visible"
+          >
+            Education
+          </motion.h1>
+          <motion.p
+            className="text-base opacity-60"
+            variants={textAnimate}
+            initial="hidden"
+            whileInView="visible2"
+          >
+            My educational journey
+          </motion.p>
           <div className="flex flex-col md:flex-row mt-24">
             <div className=" h-[350px] w-auto flex items-center justify-center px-5">
-              <div className="h-full w-[1px] bg-indigo-500 flex flex-col items-center justify-between relative">
+              <motion.div
+                className="h-full w-[1px] bg-indigo-500 flex flex-col items-center justify-between relative"
+                variants={textAnimate}
+                initial="hidden"
+                whileInView="visible"
+              >
                 <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
                   <motion.div
                     className="h-24 w-40 absolute right-1"
@@ -74,7 +108,7 @@ function Education(props) {
                     </div>
                   </motion.div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

@@ -34,12 +34,16 @@ function ServicesModal(props) {
   return (
     <div>
       <div
-        className="w-full h-full flex items-center justify-center bg-black bg-opacity-20 backdrop-blur-sm absolute left-0 z-[1000]"
+        className={`w-full h-full flex items-center justify-center ${
+          props.mode === "dark" ? "bg-black" : "bg-gray-400"
+        } bg-opacity-40 backdrop-blur-sm absolute left-0 z-[1000]`}
         onClick={() => handleCloseModal()}
       >
         <motion.div
-          className={`px-8 py-8 md:w-[420px] rounded-lg flex flex-col gap-10 ${
-            props.mode === "dark" ? "bg-gray-800" : "bg-gray-50"
+          className={`px-8 py-8 md:w-[420px] rounded-[15px] flex flex-col gap-10 border-[1px] ${
+            props.mode === "dark"
+              ? "bg-gradient-to-b from-gray-500/70 to-gray-800/70 backdrop-blur-md text-gray-50 border-gray-800/70"
+              : "bg-gradient-to-b from-gray-200/70 to-gray-400/70 backdrop-blur-md border-gray-400/60"
           }`}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

@@ -9,6 +9,20 @@ import { useNav } from "./hooks/useNav";
 function Skills(props) {
   const skillsRef = useNav("skills");
   const [accordion, setAccordion] = useState("frontend");
+  const textAnimate = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+    },
+    visible2: {
+      opacity: 0.6,
+      y: 0,
+      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+    },
+  };
+
   return (
     <div>
       <div
@@ -17,10 +31,29 @@ function Skills(props) {
         id="skills"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">
-          <h1 className="text-5xl font-bold">Skills</h1>
-          <p className="text-base opacity-60">My technical level</p>
-          <div className="flex flex-col md:flex-row gap-0 md:gap-2 lg:gap-16 mt-10 md:mt-20">
-            <div className=" h-auto w-96 flex flex-col items-center px-5 text-base md:p-5">
+          <motion.h1
+            className="text-5xl font-bold"
+            variants={textAnimate}
+            initial="hidden"
+            whileInView="visible"
+          >
+            Skills
+          </motion.h1>
+          <motion.p
+            className="text-base opacity-60"
+            variants={textAnimate}
+            initial="hidden"
+            whileInView="visible2"
+          >
+            My technical level
+          </motion.p>
+          <div className="flex flex-col md:flex-row gap-0 md:gap-2 lg:gap-16 mt-10 md:mt-12">
+            <motion.div
+              className=" h-auto w-96 flex flex-col items-center px-5 text-base md:p-5"
+              variants={textAnimate}
+              initial="hidden"
+              whileInView="visible"
+            >
               <div
                 className="w-full font-bold text-lg flex justify-between items-center mb-4 cursor-pointer"
                 onClick={() => setAccordion("frontend")}
@@ -53,6 +86,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "90%" }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -65,7 +99,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "80%" }}
-                        transition={{ delay: 0.05 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -78,7 +112,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "60%" }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -91,7 +125,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "85%" }}
-                        transition={{ delay: 0.15 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -131,6 +165,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "80%" }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -143,7 +178,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "70%" }}
-                        transition={{ delay: 0.05 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -156,7 +191,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "60%" }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -169,7 +204,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "55%" }}
-                        transition={{ delay: 0.15 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -177,8 +212,13 @@ function Skills(props) {
                   </div>
                 </div>
               )}
-            </div>
-            <div className="h-auto w-96 px-5 md:p-5 flex flex-col items-center text-base">
+            </motion.div>
+            <motion.div
+              className="h-auto w-96 px-5 md:p-5 flex flex-col items-center text-base"
+              variants={textAnimate}
+              initial="hidden"
+              whileInView="visible"
+            >
               <div
                 className="w-full font-bold text-lg flex justify-between items-center mb-4 cursor-pointer"
                 onClick={() => setAccordion("website")}
@@ -211,6 +251,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "90%" }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -223,7 +264,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "80%" }}
-                        transition={{ delay: 0.1 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -236,7 +277,7 @@ function Skills(props) {
                     <div className="w-full bg-indigo-100 rounded-full h-2 mb-4">
                       <motion.div
                         whileInView={{ width: "75%" }}
-                        transition={{ delay: 0.2 }}
+                        transition={{ delay: 0.3, duration: 0.3 }}
                         className="bg-indigo-500 h-2 rounded-full"
                         style={{ width: "0%" }}
                       ></motion.div>
@@ -330,7 +371,7 @@ function Skills(props) {
                 </div>
               )}
               {/* ------ Hidden Part ------- */}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -56,8 +56,8 @@ function App() {
         <div
           className={`${
             mode === "dark"
-              ? "bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-50"
-              : ""
+              ? "bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 text-gray-50"
+              : "bg-gradient-to-r from-gray-100 via-gray-200/70 to-gray-100"
           }`}
         >
           <Navbar mode={mode} setMode={setMode} />

@@ -50,7 +50,22 @@ function Home(props) {
       opacity: 1,
       transition: {
         delay: 0.3,
-        duration: 0.3,
+        duration: 0.5,
+      },
+    },
+  };
+
+  const animateHomeText = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.3,
+        duration: 0.5,
       },
     },
   };
@@ -95,7 +110,12 @@ function Home(props) {
       >
         <div className="container mx-auto px-4 flex items-center justify-center h-[100vh] relative pb-14 md:pb-0">
           <div className=" hidden md:mr-28 lg:block">
-            <div className="social-icons flex flex-col gap-8 text-xl text-indigo-400 ">
+            <motion.div
+              className="social-icons flex flex-col gap-8 text-xl text-indigo-400 "
+              variants={animateHomeText}
+              initial="hidden"
+              whileInView="visible"
+            >
               <button className="hover:text-indigo-500">
                 <FaLinkedinIn />
               </button>
@@ -105,12 +125,17 @@ function Home(props) {
               <button className="hover:text-indigo-500">
                 <FaInstagram />
               </button>
-            </div>
+            </motion.div>
           </div>
           <div className="flex items-center flex-col gap-0 md:gap-10 lg:gap-28 md:flex-row">
             <div className="flex md:hidden items-center container">
               <div className="">
-                <div className="social-icons flex flex-col gap-8 text-xl text-indigo-400">
+                <motion.div
+                  className="social-icons flex flex-col gap-8 text-xl text-indigo-400"
+                  variants={animateHomeText}
+                  initial="hidden"
+                  whileInView="visible"
+                >
                   <button className="hover:text-indigo-500">
                     <FaLinkedinIn />
                   </button>
@@ -120,52 +145,82 @@ function Home(props) {
                   <button className="hover:text-indigo-500">
                     <FaInstagram />
                   </button>
-                </div>
-              </div>
-              <div
-                className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 md:hidden ${
-                  props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
-                }`}
-              >
-                <img
-                  src="https://i.ibb.co/ph5w74q/pnge.png"
-                  alt="/"
-                  className="imageLink"
-                />
-              </div>
-            </div>
-            <div className="leading-loose tracking-widest">
-              <div className="text-5xl font-bold lg:flex md:block sm:flex">
-                Hi, I'am&nbsp;<div className="text-indigo-400">Harshal</div>
+                </motion.div>
               </div>
               <motion.div
-                key={texts[textIndex]}
-                className="text-lg font-semibold mt-2 mb-4"
-                variants={sentence}
-                initial={"hidden"}
-                animate={"visible"}
+                variants={animateX}
+                initial="hidden"
+                whileInView="visible"
               >
-                {texts[textIndex].split("").map((char, index) => {
-                  return (
-                    <motion.span
-                      key={char + "-" + index}
-                      variants={letter}
-                      className=""
-                    >
-                      {char}
-                    </motion.span>
-                  );
-                })}
+                <div
+                  className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 md:hidden ${
+                    props.mode === "dark"
+                      ? "shadow-indigo-900"
+                      : "shadow-indigo-900"
+                  }`}
+                >
+                  <img
+                    src="https://i.ibb.co/ph5w74q/pnge.png"
+                    alt="/"
+                    className="imageLink"
+                  />
+                </div>
               </motion.div>
-              <div className="opacity-70 leading-relaxed max-w-sm">
+            </div>
+            <div className="leading-loose tracking-widest">
+              <motion.div
+                className="text-5xl font-bold lg:flex md:block sm:flex drop-shadow-lg"
+                variants={animateHomeText}
+                initial="hidden"
+                whileInView="visible"
+              >
+                Hi, I'am&nbsp;<div className="text-indigo-400">Harshal</div>
+              </motion.div>
+              <motion.div
+                variants={animateHomeText}
+                initial="hidden"
+                whileInView="visible"
+              >
+                <motion.div
+                  key={texts[textIndex]}
+                  className="text-lg font-semibold mt-2 mb-4"
+                  variants={sentence}
+                  initial={"hidden"}
+                  animate={"visible"}
+                >
+                  {texts[textIndex].split("").map((char, index) => {
+                    return (
+                      <motion.span
+                        key={char + "-" + index}
+                        variants={letter}
+                        className=""
+                      >
+                        {char}
+                      </motion.span>
+                    );
+                  })}
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="opacity-70 leading-relaxed max-w-sm"
+                variants={animateHomeText}
+                initial="hidden"
+                whileInView="visible"
+              >
                 High level experience in web design and development knowledge,
                 producing quality work.
-              </div>
+              </motion.div>
               <br />
-              <div>
+              <motion.div
+                variants={animateHomeText}
+                initial="hidden"
+                whileInView="visible"
+              >
                 <button
                   className={`bg-indigo-500 py-[10px] px-3 rounded-lg text-white flex items-center gap-2 shadow-lg active:scale-95 transition-all transform hover:contrast-150 ${
-                    props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
+                    props.mode === "dark"
+                      ? "shadow-indigo-900"
+                      : "shadow-indigo-900"
                   }`}
                   onClick={() =>
                     document
@@ -175,10 +230,15 @@ function Home(props) {
                 >
                   Contact Me <AiOutlineSend />
                 </button>
-              </div>
+              </motion.div>
               <br />
               <div className="hidden md:block lg:hidden">
-                <div className="social-icons flex gap-8 text-xl text-indigo-400">
+                <motion.div
+                  className="social-icons flex gap-8 text-xl text-indigo-400"
+                  variants={animateHomeText}
+                  initial="hidden"
+                  whileInView="visible"
+                >
                   <button className="hover:text-indigo-500">
                     <FaLinkedinIn />
                   </button>
@@ -188,7 +248,7 @@ function Home(props) {
                   <button className="hover:text-indigo-500">
                     <FaInstagram />
                   </button>
-                </div>
+                </motion.div>
               </div>
               <Link
                 to="about"
@@ -230,7 +290,9 @@ function Home(props) {
             >
               <div
                 className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 ${
-                  props.mode === "dark" ? "shadow-black" : "shadow-gray-600"
+                  props.mode === "dark"
+                    ? "shadow-indigo-900"
+                    : "shadow-indigo-900"
                 }`}
                 ref={containerRef}
               >

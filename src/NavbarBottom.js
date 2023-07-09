@@ -27,14 +27,16 @@ function NavbarBottom(props) {
     <div>
       {isBottomMenu === "open" && (
         <div
-          className="h-screen bg-black bg-opacity-40 backdrop-blur-sm w-full fixed bottom-0 z-10 md:hidden"
+          className={`h-screen ${
+            props.mode === "dark" ? "bg-black" : "bg-white"
+          } bg-opacity-80 backdrop-blur-sm w-full fixed bottom-0 z-10 md:hidden`}
           onClick={() => setIsBottomMenu("close")}
         >
           <motion.div
-            className={`px-6 py-8 grid grid-cols-3 grid-rows-2 gap-8 absolute bottom-12 w-full text-base md:hidden rounded-t-lg ${
+            className={`px-6 py-8 grid grid-cols-3 grid-rows-2 gap-8 absolute bottom-12 w-full text-base md:hidden rounded-t-[15px] shadow-inner ${
               props.mode === "dark"
-                ? "bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-50"
-                : "bg-white"
+                ? "bg-gradient-to-b from-gray-700/30 to-gray-900/30 backdrop-blur-md text-gray-50 border-gray-800/30"
+                : "bg-gradient-to-b from-gray-100/30 to-gray-200/30 backdrop-blur-md border-gray-400/20"
             }`}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -112,8 +114,10 @@ function NavbarBottom(props) {
         </div>
       )}
       <div
-        className={`flex px-6 py-4 fixed w-full bottom-0 md:hidden shadow-2xl shadow-black z-20 ${
-          props.mode === "dark" ? "bg-gray-900 text-gray-50" : "bg-white"
+        className={`flex px-6 py-4 fixed w-full bottom-0 md:hidden shadow-2xl shadow-black z-20 rounded-t-xl ${
+          props.mode === "dark"
+            ? "bg-gradient-to-b from-gray-700/30 to-gray-900/30 backdrop-blur-md text-gray-50 border-gray-800/30"
+            : "bg-gradient-to-b from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
         }`}
       >
         <div

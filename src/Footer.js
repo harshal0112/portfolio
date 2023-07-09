@@ -33,14 +33,14 @@ function Footer() {
               Contact me
             </div>
           </div>
-          <div className="flex gap-8">
-            <div>
+          <div className="flex gap-8 text-xl">
+            <div className="hover:text-[#1d9bf0] cursor-pointer rounded-full">
               <FaFacebook />
             </div>
-            <div>
+            <div className="cursor-pointer hover:text-[#f6076e]">
               <FaInstagram />
             </div>
-            <div>
+            <div className="cursor-pointer hover:text-[#1d9bf0]">
               <FaTwitter />
             </div>
           </div>

@@ -47,10 +47,10 @@ const Services = (props) => {
             </div>
           )}
           <motion.div
-            className={`sm:min-w-[250px] sm:min-h-[320px] rounded overflow-hidden shadow-lg ${
+            className={`sm:min-w-[250px] sm:min-h-[320px] rounded-[15px] shadow-lg overflow-hidden border-2 ${
               props.mode === "dark"
-                ? "shadow-black bg-gray-700 text-white"
-                : "shadow-gray-400 bg-gray-50"
+                ? "bg-gradient-to-b from-gray-500/30 to-gray-800/30 backdrop-blur-md text-gray-50 border-gray-800/30"
+                : "bg-gradient-to-b from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
             }`}
             variants={servicesAnimate}
             initial="hidden"
@@ -73,10 +73,10 @@ const Services = (props) => {
             </div>
           </motion.div>
           <motion.div
-            className={`sm-min-w-[250px] sm-min-h-[320px] rounded overflow-hidden shadow-lg ${
+            className={`sm-min-w-[250px] sm-min-h-[320px] rounded-[15px] overflow-hidden border-2 shadow-lg ${
               props.mode === "dark"
-                ? "shadow-black bg-gray-700 text-white"
-                : "shadow-gray-400 bg-gray-50"
+                ? "bg-gradient-to-b from-gray-500/30 to-gray-800/30 backdrop-blur-md text-gray-50 border-gray-800/30"
+                : "bg-gradient-to-b from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
             }`}
             variants={servicesAnimate}
             initial="hidden"
@@ -100,10 +100,10 @@ const Services = (props) => {
             </div>
           </motion.div>
           <motion.div
-            className={`sm-min-w-[250px] sm-min-h-[320px] rounded overflow-hidden shadow-lg ${
+            className={`sm-min-w-[250px] sm-min-h-[320px] rounded-[15px] overflow-hidden border-2 shadow-lg ${
               props.mode === "dark"
-                ? "shadow-black bg-gray-700 text-white"
-                : "shadow-gray-400 bg-gray-50"
+                ? "bg-gradient-to-b from-gray-500/30 to-gray-800/30 backdrop-blur-md text-gray-50 border-gray-800/30"
+                : "bg-gradient-to-b from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
             }`}
             variants={servicesAnimate}
             initial="hidden"
