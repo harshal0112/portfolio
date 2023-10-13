@@ -111,18 +111,18 @@ function Home(props) {
         <div className="container mx-auto px-4 flex items-center justify-center h-[100vh] relative pb-14 md:pb-0">
           <div className=" hidden md:mr-28 lg:block">
             <motion.div
-              className="social-icons flex flex-col gap-8 text-xl text-indigo-400 "
+              className={`social-icons flex flex-col gap-8 text-xl ${props.textColorMode}`}
               variants={animateHomeText}
               initial="hidden"
               whileInView="visible"
             >
-              <button className="hover:text-indigo-500">
+              <button className={props.textColorMode}>
                 <FaLinkedinIn />
               </button>
-              <button className="hover:text-indigo-500">
+              <button className={props.textColorMode}>
                 <FaGithub />
               </button>
-              <button className="hover:text-indigo-500">
+              <button className={props.textColorMode}>
                 <FaInstagram />
               </button>
             </motion.div>
@@ -131,18 +131,18 @@ function Home(props) {
             <div className="flex md:hidden items-center container">
               <div className="">
                 <motion.div
-                  className="social-icons flex flex-col gap-8 text-xl text-indigo-400"
+                  className={`social-icons flex flex-col gap-8 text-xl ${props.textColorMode}`}
                   variants={animateHomeText}
                   initial="hidden"
                   whileInView="visible"
                 >
-                  <button className="hover:text-indigo-500">
+                  <button className={props.textColorMode}>
                     <FaLinkedinIn />
                   </button>
-                  <button className="hover:text-indigo-500">
+                  <button className={props.textColorMode}>
                     <FaGithub />
                   </button>
-                  <button className="hover:text-indigo-500">
+                  <button className={props.textColorMode}>
                     <FaInstagram />
                   </button>
                 </motion.div>
@@ -153,11 +153,7 @@ function Home(props) {
                 whileInView="visible"
               >
                 <div
-                  className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 md:hidden ${
-                    props.mode === "dark"
-                      ? "shadow-indigo-900"
-                      : "shadow-indigo-900"
-                  }`}
+                  className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r ${props.picBgColorMode} overflow-hidden flex items-center justify-center shadow-md scale-75 md:scale-100 md:hidden ${props.shadowColorMode}`}
                 >
                   <img
                     src="https://i.ibb.co/ph5w74q/pnge.png"
@@ -174,7 +170,8 @@ function Home(props) {
                 initial="hidden"
                 whileInView="visible"
               >
-                Hi, I'am&nbsp;<div className="text-indigo-400">Harshal</div>
+                Hi, I'am&nbsp;
+                <div className={`${props.textColorMode}`}>Harshal</div>
               </motion.div>
               <motion.div
                 variants={animateHomeText}
@@ -217,11 +214,7 @@ function Home(props) {
                 whileInView="visible"
               >
                 <button
-                  className={`bg-indigo-500 py-[10px] px-3 rounded-lg text-white flex items-center gap-2 shadow-lg active:scale-95 transition-all transform hover:contrast-150 ${
-                    props.mode === "dark"
-                      ? "shadow-indigo-900"
-                      : "shadow-indigo-900"
-                  }`}
+                  className={`${props.bgColorMode} py-[10px] px-3 rounded-lg text-white flex items-center gap-2 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.shadowColorMode}`}
                   onClick={() =>
                     document
                       .getElementById("contact")
@@ -234,18 +227,18 @@ function Home(props) {
               <br />
               <div className="hidden md:block lg:hidden">
                 <motion.div
-                  className="social-icons flex gap-8 text-xl text-indigo-400"
+                  className={`social-icons flex gap-8 text-xl ${props.textColorMode}`}
                   variants={animateHomeText}
                   initial="hidden"
                   whileInView="visible"
                 >
-                  <button className="hover:text-indigo-500">
+                  <button className={props.textColorMode}>
                     <FaLinkedinIn />
                   </button>
-                  <button className="hover:text-indigo-500">
+                  <button className={props.textColorMode}>
                     <FaGithub />
                   </button>
-                  <button className="hover:text-indigo-500">
+                  <button className={props.textColorMode}>
                     <FaInstagram />
                   </button>
                 </motion.div>
@@ -264,12 +257,12 @@ function Home(props) {
                       : "hover:bg-slate-200 hover:bg-opacity-50"
                   }`}
                 >
-                  <div className="text-indigo-400 text-2xl">
+                  <div className={`${props.textColorMode} text-2xl`}>
                     <CgMouse />
                   </div>
                   scroll down
                   <motion.div
-                    className="text-indigo-400 text-xl"
+                    className={`${props.textColorMode} text-xl`}
                     animate={{ y: [0, -2, 0, 2, 0] }}
                     transition={{
                       duration: 1,
@@ -289,11 +282,7 @@ function Home(props) {
               whileInView="visible"
             >
               <div
-                className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r from-indigo-500 via-indigo-400 to-indigo-500 overflow-hidden flex items-center justify-center shadow-xl scale-75 md:scale-100 ${
-                  props.mode === "dark"
-                    ? "shadow-indigo-900"
-                    : "shadow-indigo-900"
-                }`}
+                className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r ${props.picBgColorMode} overflow-hidden flex items-center justify-center shadow-md scale-75 md:scale-100 ${props.shadowColorMode}`}
                 ref={containerRef}
               >
                 <img

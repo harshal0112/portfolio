@@ -46,6 +46,23 @@ function About(props) {
       transition: { type: "tween", delay: 0.3, duration: 0.5 },
     },
   };
+
+  const bgColorMode = `${
+    props.colorMode === "red"
+      ? "bg-red-500"
+      : props.colorMode === "green"
+      ? "bg-green-500"
+      : props.colorMode === "yellow"
+      ? "bg-yellow-500"
+      : props.colorMode === "blue"
+      ? "bg-blue-500"
+      : props.colorMode === "fuchsia"
+      ? "bg-fuchsia-500"
+      : props.colorMode === "slate"
+      ? "bg-slate-500"
+      : "bg-indigo-500"
+  }`;
+
   return (
     <div>
       <div
@@ -120,11 +137,7 @@ function About(props) {
                 whileInView="visible"
               >
                 <button
-                  className={`flex items-center p-4 bg-indigo-500 rounded-lg shadow-lg active:scale-95 hover:contrast-150 ${
-                    props.mode === "dark"
-                      ? "shadow-indigo-900"
-                      : "shadow-indigo-900"
-                  }`}
+                  className={`flex items-center p-4 ${bgColorMode} rounded-lg shadow-md active:scale-95 hover:contrast-150 ${props.shadowColorMode}`}
                   onClick={() => handleDownload()}
                 >
                   Download CV&nbsp;

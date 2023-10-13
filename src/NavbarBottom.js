@@ -1,17 +1,17 @@
 import React, { useState, useContext } from "react";
+import { BsSunFill, BsCloudsFill, BsMoonFill, BsStars } from "react-icons/bs";
 import {
   FaBriefcase,
+  FaCog,
   FaFileAlt,
   FaGraduationCap,
   FaHome,
-  FaMoon,
   FaPaperPlane,
-  FaSun,
   FaUser,
 } from "react-icons/fa";
 import { BsGrid } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { NavContext } from "./context/NavContext";
 
 function NavbarBottom(props) {
@@ -120,21 +120,72 @@ function NavbarBottom(props) {
             : "bg-gradient-to-b from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
         }`}
       >
-        <div
-          className={`${isBottomMenu === "open" ? "hidden" : ""} font-bold`}
-          style={{ fontFamily: "Tilt Prism" }}
-        >
-          Harshal
+        <div>
+          {isBottomMenu === "open" ? (
+            <motion.div whileTap={{ scale: 0.85 }}>
+              <FaCog />
+            </motion.div>
+          ) : (
+            <div className={`font-bold`} style={{ fontFamily: "Tilt Prism" }}>
+              Harshal
+            </div>
+          )}
         </div>
         <div className="flex ml-auto gap-6">
-          <button
-            className={`${isBottomMenu === "open" ? "hidden" : ""}`}
-            onClick={() =>
-              props.setMode(props.mode === "dark" ? "light" : "dark")
-            }
+          <div
+            className={`flex items-center self-center ${
+              props.bgColorMode
+            } bg-opacity-75 w-12 rounded-full h-5 relative ${
+              isBottomMenu === "open" ? "hidden" : ""
+            }`}
           >
-            {props.mode === "light" ? <FaMoon /> : <FaSun />}
-          </button>
+            <button
+              className="flex items-center"
+              onClick={() =>
+                props.setMode(props.mode === "light" ? "dark" : "light")
+              }
+            >
+              <AnimatePresence>
+                {props.mode === "light" ? (
+                  <div>
+                    <motion.div
+                      className="bg-gray-100 border border-black h-6 w-6 rounded-full flex justify-center items-center"
+                      initial={{ x: "24px" }}
+                      animate={{ x: 0, rotate: 360 }}
+                    >
+                      <BsSunFill />
+                    </motion.div>
+                    <motion.div
+                      className="absolute left-[28px] top-[3.5px] text-sm"
+                      initial={{ y: -5, opacity: 0 }}
+                      transition={{ delay: 0.1, duration: 0.2 }}
+                      animate={{ y: 0, opacity: 1 }}
+                    >
+                      <BsCloudsFill />
+                    </motion.div>
+                  </div>
+                ) : (
+                  <AnimatePresence>
+                    <motion.div
+                      className="bg-gray-800 border border-white h-6 w-6 rounded-full flex justify-center items-center"
+                      initial={{ x: 0 }}
+                      animate={{ x: "24px", rotate: 360 }}
+                    >
+                      <BsMoonFill />
+                    </motion.div>
+                    <motion.div
+                      className="absolute top-[3.5px] left-[5px] text-sm"
+                      initial={{ y: 5, opacity: 0 }}
+                      transition={{ delay: 0.1, duration: 0.2 }}
+                      animate={{ y: 0, opacity: 1 }}
+                    >
+                      <BsStars />
+                    </motion.div>
+                  </AnimatePresence>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
           <button
             onClick={() =>
               setIsBottomMenu(isBottomMenu === "open" ? "close" : "open")

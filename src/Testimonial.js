@@ -7,7 +7,7 @@ import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
-const Testimonial = () => {
+const Testimonial = (props) => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Testimonial = () => {
   });
 
   const renderBullet = (index, className) => {
-    return `<span class="${className}" style="background-color: #6366f1"></span>`;
+    return `<span class="${className}" style="background-color: #71717a"></span>`;
   };
 
   return (
@@ -35,7 +35,8 @@ const Testimonial = () => {
           className="!overflow-hidden"
           spaceBetween={50}
           slidesPerView={windowSize > 720 ? 2 : 1}
-          pagination={{ clickable: true, renderBullet }}
+          loop={true}
+          pagination={{ clickable: true, renderBullet, dynamicBullets: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
         >
           <SwiperSlide>
@@ -51,7 +52,7 @@ const Testimonial = () => {
                   <p className="font-semibold">Bark Dagleish</p>
                   <p className="mt-1 opacity-70">Client</p>
                 </div>
-                <div className="ml-auto flex text-indigo-400">
+                <div className={`ml-auto flex ${props.textColorMode}`}>
                   <IoMdStar /> <IoMdStar /> <IoMdStar /> <IoMdStar />{" "}
                   <IoMdStarHalf />
                 </div>
@@ -81,7 +82,7 @@ const Testimonial = () => {
                   <p className="font-semibold">Lonny Wyatt</p>
                   <p className="mt-1 opacity-70">Client</p>
                 </div>
-                <div className="ml-auto flex text-indigo-400">
+                <div className={`ml-auto flex ${props.textColorMode}`}>
                   <IoMdStar /> <IoMdStar /> <IoMdStar /> <IoMdStar />{" "}
                   <IoMdStarOutline />
                 </div>
@@ -110,7 +111,7 @@ const Testimonial = () => {
                   <p className="font-semibold">Neva Howard</p>
                   <p className="mt-1 opacity-70">Client</p>
                 </div>
-                <div className="ml-auto flex text-indigo-400">
+                <div className={`ml-auto flex ${props.textColorMode}`}>
                   <IoMdStar /> <IoMdStar /> <IoMdStar /> <IoMdStar />{" "}
                   <IoMdStarHalf />
                 </div>
@@ -139,7 +140,7 @@ const Testimonial = () => {
                   <p className="font-semibold">Louie Rocha</p>
                   <p className="mt-1 opacity-70">Client</p>
                 </div>
-                <div className="ml-auto flex text-indigo-400">
+                <div className={`ml-auto flex ${props.textColorMode}`}>
                   <IoMdStar /> <IoMdStar /> <IoMdStar /> <IoMdStar />{" "}
                   <IoMdStarOutline />
                 </div>

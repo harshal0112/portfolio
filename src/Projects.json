@@ -8,28 +8,28 @@
     },
     {
         "name": "YouTube - Clone",
-        "id" : 1,
+        "id" : 2,
         "imageSrc" : "https://i.ibb.co/p2DryLc/You-Tube-Clone-Home.png",
         "href" : "https://harshal0112.github.io/youtube-clone/",
         "description": "A YouTube clone made with HTML, JavaScript, and the YouTube API is a web application that mimics the functionality of the original YouTube platform."
     },
     {
         "name": "Periodic Table",
-        "id" : 2,
+        "id" : 3,
         "imageSrc" : "https://i.ibb.co/3cWCQ5t/Periodic-Table.png",
         "href" : "https://periodictable-one.vercel.app/",
         "description": "A periodic table website made with React is a digital representation of the chemical elements organized in the form of a periodic table."
     },
     {
         "name": "TextUtils - Text Editor",
-        "id" : 3,
+        "id" : 4,
         "imageSrc" : "https://i.ibb.co/TbBp4tX/Textutils-A-Text-Editor.png",
         "href" : "https://textutils-harshal.vercel.app/",
         "description" : "TextUtils is a text editor website made with React, which allows users to input, edit and format text in real-time. "
     },
     {
         "name": "Spotify - Clone",
-        "id" : 4,
+        "id" : 5,
         "imageSrc" : "https://i.ibb.co/wC2Fn9T/Spotify-Clone.png",
         "href": "https://harshal0112.github.io/spotifyclone/",
         "description": "A Spotify website clone made with HTML and CSS is a web application that replicates the look and feel of the original Spotify website."

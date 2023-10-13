@@ -47,12 +47,14 @@ function Education(props) {
           <div className="flex flex-col md:flex-row mt-24">
             <div className=" h-[350px] w-auto flex items-center justify-center px-5">
               <motion.div
-                className="h-full w-[1px] bg-indigo-500 flex flex-col items-center justify-between relative"
+                className={`h-full w-[1px] ${props.bgColorMode} flex flex-col items-center justify-between relative`}
                 variants={textAnimate}
                 initial="hidden"
                 whileInView="visible"
               >
-                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
+                <div
+                  className={`w-4 h-4 ${props.bgColorMode} rounded-full flex items-center`}
+                >
                   <motion.div
                     className="h-24 w-40 absolute right-1"
                     initial={{ x: 100, opacity: 0, scale: 0 }}
@@ -66,7 +68,9 @@ function Education(props) {
                     </div>
                   </motion.div>
                 </div>
-                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
+                <div
+                  className={`w-4 h-4 ${props.bgColorMode} rounded-full flex items-center`}
+                >
                   <motion.div
                     className="h-24 w-40 absolute left-8"
                     initial={{ x: -130, opacity: 0, scale: 0 }}
@@ -80,7 +84,9 @@ function Education(props) {
                     </div>
                   </motion.div>
                 </div>
-                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
+                <div
+                  className={`w-4 h-4 ${props.bgColorMode} rounded-full flex items-center`}
+                >
                   <motion.div
                     className="h-24 w-40 absolute right-1"
                     initial={{ x: 100, opacity: 0, scale: 0 }}
@@ -94,7 +100,9 @@ function Education(props) {
                     </div>
                   </motion.div>
                 </div>
-                <div className="w-4 h-4 bg-indigo-500 rounded-full flex items-center">
+                <div
+                  className={`w-4 h-4 ${props.bgColorMode} rounded-full flex items-center`}
+                >
                   <motion.div
                     className="h-24 w-40 absolute left-8"
                     initial={{ x: -130, opacity: 0, scale: 0 }}
@@ -104,7 +112,23 @@ function Education(props) {
                     <div className="font-bold text-lg">B. Tech (ENTC)</div>
                     <div className="text-base opacity-70">SPPU Pune</div>
                     <div className="text-base opacity-70 flex items-center gap-2">
-                      <CiCalendarDate /> 2020 - 2024
+                      <CiCalendarDate /> 2021 - 2025
+                    </div>
+                  </motion.div>
+                </div>
+                <div
+                  className={`w-4 h-4 ${props.bgColorMode} rounded-full flex items-center`}
+                >
+                  <motion.div
+                    className="h-24 w-40 absolute right-1"
+                    initial={{ x: 100, opacity: 0, scale: 0 }}
+                    whileInView={{ x: 0, opacity: 1, scale: 1 }}
+                    transition={{ type: "tween", duration: 0.5 }}
+                  >
+                    <div className="font-bold text-lg">MCA</div>
+                    <div className="text-base opacity-70">IGNOU</div>
+                    <div className="text-base opacity-70 flex items-center gap-2">
+                      <CiCalendarDate /> 2023 - 2025
                     </div>
                   </motion.div>
                 </div>

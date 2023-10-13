@@ -54,7 +54,7 @@ function ServicesModal(props) {
               {servicesModal[props.number].heading}
             </div>
             <button
-              className="text-indigo-600"
+              className={`${props.textColorMode}`}
               onClick={() => handleCloseModal()}
             >
               <IoClose />

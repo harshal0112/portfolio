@@ -10,9 +10,9 @@ import { motion } from "framer-motion";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
-const WorkX = () => {
+const WorkX = (props) => {
   const renderBullet = (index, className) => {
-    return `<span class="${className}" style="background-color: #6366f1"></span>`;
+    return `<span class="${className}" style="background-color: #71717a"></span>`;
   };
 
   const workRef = useNav("work");
@@ -54,7 +54,8 @@ const WorkX = () => {
           className="!overflow-hidden"
           spaceBetween={50}
           slidesPerView={1}
-          pagination={{ clickable: true, renderBullet }}
+          loop={true}
+          pagination={{ clickable: true, renderBullet, dynamicBullets: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
         >
           {data.projects.map((product) => (
@@ -75,7 +76,9 @@ const WorkX = () => {
                       rel="noreferrer"
                       className="w-fit"
                     >
-                      <button className="py-3 px-4 bg-indigo-500 w-fit rounded-md shadow-xl shadow-indigo-900">
+                      <button
+                        className={`py-3 px-4 ${props.bgColorMode} w-fit rounded-md shadow-md ${props.shadowColorMode}`}
+                      >
                         <div className="flex items-center text-white text-base font-semibold">
                           Demo &nbsp;
                           <HiArrowSmRight />

@@ -53,7 +53,7 @@ function Contact(props) {
             <div className="h-auto w-auto mt-10 flex flex-col md:flex-row gap-10 mb-14 md:mb-0">
               <div className="w-1/2 h-full flex flex-col gap-10">
                 <div className="w-full flex items-center gap-4">
-                  <div className="text-3xl text-indigo-500">
+                  <div className={`text-3xl ${props.textColorMode}`}>
                     <BsTelephone />
                   </div>
                   <div className="flex flex-col">
@@ -62,7 +62,7 @@ function Contact(props) {
                   </div>
                 </div>
                 <div className="w-full flex items-center gap-4">
-                  <div className="text-3xl text-indigo-500">
+                  <div className={`text-3xl ${props.textColorMode}`}>
                     <MdOutlineMail />
                   </div>
                   <div className="flex flex-col">
@@ -73,7 +73,7 @@ function Contact(props) {
                   </div>
                 </div>
                 <div className="w-full flex items-center gap-4">
-                  <div className="text-3xl text-indigo-500">
+                  <div className={`text-3xl ${props.textColorMode}`}>
                     <SlLocationPin />
                   </div>
                   <div className="flex flex-col">
@@ -112,7 +112,7 @@ function Contact(props) {
                     name="Name"
                     placeholder="Name"
                     onChange={(e) => setName(e.target.value)}
-                    className="rounded-md h-16 bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600"
+                    className={`rounded-md h-16 ${props.bgColorMode2} w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600`}
                     required
                   />
                 </div>
@@ -121,7 +121,7 @@ function Contact(props) {
                     type="email"
                     name="Email"
                     placeholder="Email"
-                    className="rounded-md h-16 bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600"
+                    className={`rounded-md h-16 ${props.bgColorMode2} w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600`}
                     required
                   />
                 </div>
@@ -131,7 +131,7 @@ function Contact(props) {
                     name="Subject"
                     placeholder="Subject"
                     onChange={(e) => setSubject(e.target.value)}
-                    className="rounded-md h-16 bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600"
+                    className={`rounded-md h-16 ${props.bgColorMode2} w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600`}
                     required
                   />
                 </div>
@@ -140,17 +140,13 @@ function Contact(props) {
                     type="text"
                     name="Message"
                     placeholder="Message"
-                    className="rounded-md bg-indigo-100 w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600 resize-none"
+                    className={`rounded-md ${props.bgColorMode2} w-full appearance-none border-2 border-indigo-200 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-indigo-600 resize-none`}
                     rows={4}
                     required
                   ></textarea>
                 </div>
                 <button
-                  className={`bg-indigo-500 p-4 flex justify-center items-center rounded-lg text-white active:scale-95 transition-all shadow-lg hover:contrast-150 ${
-                    props.mode === "dark"
-                      ? "shadow-indigo-900"
-                      : "shadow-indigo-900"
-                  }`}
+                  className={`${props.bgColorMode} p-4 flex justify-center items-center rounded-lg text-white active:scale-95 transition-all shadow-md hover:contrast-150 ${props.shadowColorMode}`}
                   type="submit"
                 >
                   <div className="flex items-center gap-2">
