@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { FaCog } from "react-icons/fa";
 import { NavContext } from "./context/NavContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,6 +14,8 @@ function Navbar(props) {
 
   const [settingClick, setSettingClick] = useState("inactive");
 
+  let menuRef = useRef();
+
   const handleSettingClick = () => {
     if (settingClick === "inactive") {
       setSettingClick("active");
@@ -21,6 +23,20 @@ function Navbar(props) {
       setSettingClick("inactive");
     }
   };
+
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setSettingClick("inactive");
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -222,7 +238,10 @@ function Navbar(props) {
                   </button>
                 </div>
                 <div className="opacity-40">|</div>
-                <div className="flex items-center hover:cursor-pointer relative">
+                <div
+                  className="flex items-center hover:cursor-pointer relative"
+                  ref={menuRef}
+                >
                   <motion.div whileTap={{ scale: 0.9 }}>
                     <FaCog
                       className={`transform transition-transform duration-200 ${
