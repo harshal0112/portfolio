@@ -208,6 +208,7 @@ function App() {
             colorMode={colorMode}
             setColorMode={setColorMode}
             bgColorMode={bgColorMode}
+            textColorMode={textColorMode}
           />
           {isVisible && (
             <Link to="home" smooth={true} spy={true} duration={500}>

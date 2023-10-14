@@ -170,7 +170,7 @@ function Home(props) {
                 initial="hidden"
                 whileInView="visible"
               >
-                Hi, I'am&nbsp;
+                Hi, I'm&nbsp;
                 <div className={`${props.textColorMode}`}>Harshal</div>
               </motion.div>
               <motion.div

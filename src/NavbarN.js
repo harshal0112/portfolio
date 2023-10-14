@@ -198,7 +198,7 @@ function Navbar(props) {
                   >
                     <AnimatePresence>
                       {props.mode === "light" ? (
-                        <div>
+                        <div key={props.mode}>
                           <motion.div
                             className="bg-gray-100 border border-black h-6 w-6 rounded-full flex justify-center items-center"
                             initial={{ x: "24px" }}
@@ -216,7 +216,7 @@ function Navbar(props) {
                           </motion.div>
                         </div>
                       ) : (
-                        <AnimatePresence>
+                        <div key={props.mode}>
                           <motion.div
                             className="bg-gray-800 border border-white h-6 w-6 rounded-full flex justify-center items-center"
                             initial={{ x: 0 }}
@@ -232,7 +232,7 @@ function Navbar(props) {
                           >
                             <BsStars />
                           </motion.div>
-                        </AnimatePresence>
+                        </div>
                       )}
                     </AnimatePresence>
                   </button>
