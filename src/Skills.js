@@ -27,7 +27,7 @@ function Skills(props) {
     <div>
       <div
         ref={skillsRef}
-        className={`w-full min-h-screen flex justify-center items-center py-20 text-6xl snap-center`}
+        className={`w-full min-h-screen flex justify-center items-center pb-12 md:pb-0 text-6xl snap-center`}
         id="skills"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">

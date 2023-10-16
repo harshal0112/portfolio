@@ -24,7 +24,7 @@ function Education(props) {
     <div>
       <div
         ref={educationRef}
-        className={`min-h-screen py-16 w-full flex justify-center items-center text-6xl snap-start`}
+        className={`min-h-screen pb-20 md:pb-0 w-full flex justify-center items-center text-6xl snap-start`}
         id="education"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">

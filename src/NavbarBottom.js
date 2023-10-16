@@ -137,14 +137,13 @@ function NavbarBottom(props) {
             transition={{ type: "tween" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className="w-full flex justify-start"
-              onClick={() => setIsThemeChooser("close")}
-            >
-              <BiArrowBack />
+            <div className="w-full flex justify-between items-center">
+              <BiArrowBack onClick={() => setIsThemeChooser("close")} />
+              <div className="select-none">Settings</div>
+              <BiArrowBack className="opacity-0 pointer-events-none" />
             </div>
             <div
-              className={`pb-1 mb-1 px-2 pointer-events-none border-b-2 whitespace-nowrap overflow-hidden ${
+              className={`pb-1 mb-1 px-2 pointer-events-none select-none border-b-2 whitespace-nowrap overflow-hidden ${
                 props.mode === "dark" ? "border-white" : "border-black"
               }`}
             >
@@ -244,21 +243,21 @@ function NavbarBottom(props) {
             </div>
             <div
               className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
-                props.colorMode === "blue"
-                  ? `text-blue-500 ${
+                props.colorMode === "sky"
+                  ? `text-sky-500 ${
                       props.mode === "dark"
                         ? "bg-gray-700/40"
                         : "bg-gray-700/20"
                     } rounded-md`
                   : ""
               }`}
-              onClick={() => props.setColorMode("blue")}
+              onClick={() => props.setColorMode("sky")}
             >
-              <div>Blue</div>
-              <div className="bg-blue-500 h-4 w-4 rounded-[4px]">
+              <div>Sky</div>
+              <div className="bg-sky-500 h-4 w-4 rounded-[4px]">
                 <FiCheck
                   className={`${
-                    props.colorMode === "blue"
+                    props.colorMode === "sky"
                       ? "text-white opacity-100 pt-[1px]"
                       : "opacity-0"
                   }`}
@@ -323,16 +322,33 @@ function NavbarBottom(props) {
       >
         <div>
           {isBottomMenu === "open" ? (
-            <motion.div
-              whileTap={{ scale: 0.85 }}
+            <div
+              className="flex items-center gap-2"
               onClick={() =>
                 setIsThemeChooser(isThemeChooser === "open" ? "close" : "open")
               }
             >
-              <FaCog />
-            </motion.div>
+              <motion.div
+                animate={{ rotate: [-45, -45, 0, 0, 0, 0, 0, -45, -45] }}
+                transition={{ delay: 0.5, duration: 3.5 }}
+              >
+                <FaCog />
+              </motion.div>
+              <motion.div
+                animate={{
+                  x: [-10, -9, 0, 0, 0, 0, 0, -9, -10],
+                  opacity: [0, 0, 1, 1, 1, 1, 1, 0, 0],
+                }}
+                transition={{ delay: 0.5, duration: 3.5 }}
+              >
+                Settings
+              </motion.div>
+            </div>
           ) : (
-            <div className={`font-bold`} style={{ fontFamily: "Tilt Prism" }}>
+            <div
+              className={`font-bold select-none`}
+              style={{ fontFamily: "Tilt Prism" }}
+            >
               Harshal
             </div>
           )}

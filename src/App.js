@@ -64,13 +64,45 @@ function App() {
       ? "text-green-500"
       : colorMode === "yellow"
       ? "text-yellow-500"
-      : colorMode === "blue"
-      ? "text-blue-500"
+      : colorMode === "sky"
+      ? "text-sky-500"
       : colorMode === "fuchsia"
       ? "text-fuchsia-500"
       : colorMode === "slate"
       ? "text-slate-500"
       : "text-indigo-500"
+  }`;
+
+  const svgColorMode1 = `${
+    colorMode === "red"
+      ? "stop-red-500"
+      : colorMode === "green"
+      ? "stop-green-500"
+      : colorMode === "yellow"
+      ? "stop-yellow-500"
+      : colorMode === "sky"
+      ? "stop-sky-500"
+      : colorMode === "fuchsia"
+      ? "stop-fuchsia-500"
+      : colorMode === "slate"
+      ? "stop-slate-500"
+      : "stop-indigo-500"
+  }`;
+
+  const svgColorMode2 = `${
+    colorMode === "red"
+      ? "stop-red-400"
+      : colorMode === "green"
+      ? "stop-green-400"
+      : colorMode === "yellow"
+      ? "stop-yellow-400"
+      : colorMode === "sky"
+      ? "stop-sky-400"
+      : colorMode === "fuchsia"
+      ? "stop-fuchsia-400"
+      : colorMode === "slate"
+      ? "stop-slate-400"
+      : "stop-indigo-400"
   }`;
 
   const bgColorMode = `${
@@ -80,8 +112,8 @@ function App() {
       ? "bg-green-500"
       : colorMode === "yellow"
       ? "bg-yellow-500"
-      : colorMode === "blue"
-      ? "bg-blue-500"
+      : colorMode === "sky"
+      ? "bg-sky-500"
       : colorMode === "fuchsia"
       ? "bg-fuchsia-500"
       : colorMode === "slate"
@@ -96,8 +128,8 @@ function App() {
       ? "bg-green-100"
       : colorMode === "yellow"
       ? "bg-yellow-100"
-      : colorMode === "blue"
-      ? "bg-blue-100"
+      : colorMode === "sky"
+      ? "bg-sky-100"
       : colorMode === "fuchsia"
       ? "bg-fuchsia-100"
       : colorMode === "slate"
@@ -112,8 +144,8 @@ function App() {
       ? "from-green-500 via-green-400 to-green-500"
       : colorMode === "yellow"
       ? "from-yellow-500 via-yellow-400 to-yellow-500"
-      : colorMode === "blue"
-      ? "from-blue-500 via-blue-400 to-blue-500"
+      : colorMode === "sky"
+      ? "from-sky-500 via-sky-400 to-sky-500"
       : colorMode === "fuchsia"
       ? "from-fuchsia-500 via-fuchsia-400 to-fuchsia-500"
       : colorMode === "slate"
@@ -128,8 +160,8 @@ function App() {
       ? "shadow-yellow-900"
       : colorMode === "green"
       ? "shadow-green-900"
-      : colorMode === "blue"
-      ? "shadow-blue-900"
+      : colorMode === "sky"
+      ? "shadow-sky-900"
       : colorMode === "fuchsia"
       ? "shadow-fuchsia-900"
       : colorMode === "slate"
@@ -161,7 +193,8 @@ function App() {
             textColorMode={textColorMode}
             bgColorMode={bgColorMode}
             shadowColorMode={shadowColorMode}
-            picBgColorMode={picBgColorMode}
+            svgColorMode1={svgColorMode1}
+            svgColorMode2={svgColorMode2}
           />
           <About
             mode={mode}

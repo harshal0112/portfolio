@@ -76,8 +76,8 @@ function Navbar(props) {
       ? "before:bg-fuchsia-500"
       : props.colorMode === "slate"
       ? "before:bg-slate-500"
-      : props.colorMode === "blue"
-      ? "before:bg-blue-500"
+      : props.colorMode === "sky"
+      ? "before:bg-sky-500"
       : "before:bg-indigo-500"
   }`;
 
@@ -93,7 +93,7 @@ function Navbar(props) {
         <div className="nav flex items-center py-6 justify-center px-4 lg:px-10 xl:px-14">
           <div className="container flex">
             <div
-              className="flex items-center font-bold cursor-pointer"
+              className="flex items-center font-bold cursor-pointer select-none"
               style={{ fontFamily: "Tilt Prism" }}
               onClick={() => handleNavClick("home")}
             >
@@ -237,7 +237,9 @@ function Navbar(props) {
                     </AnimatePresence>
                   </button>
                 </div>
-                <div className="opacity-40">|</div>
+                <div className="opacity-40 pointer-events-none select-none">
+                  |
+                </div>
                 <div
                   className="flex items-center hover:cursor-pointer relative"
                   ref={menuRef}
@@ -289,7 +291,7 @@ function Navbar(props) {
                           }`}
                         ></div>
                         <div
-                          className={`pb-1 mb-1 px-2 pointer-events-none border-b-2 whitespace-nowrap overflow-hidden ${
+                          className={`pb-1 mb-1 px-2 pointer-events-none select-none border-b-2 whitespace-nowrap overflow-hidden ${
                             props.mode === "dark"
                               ? "border-white"
                               : "border-black"
@@ -391,21 +393,21 @@ function Navbar(props) {
                         </div>
                         <div
                           className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
-                            props.colorMode === "blue"
-                              ? `text-blue-500 ${
+                            props.colorMode === "sky"
+                              ? `text-sky-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
                                 } rounded-md`
                               : ""
                           }`}
-                          onClick={() => props.setColorMode("blue")}
+                          onClick={() => props.setColorMode("sky")}
                         >
-                          <div>Blue</div>
-                          <div className="bg-blue-500 h-4 w-4 rounded-[4px]">
+                          <div>Sky</div>
+                          <div className="bg-sky-500 h-4 w-4 rounded-[4px]">
                             <FiCheck
                               className={`${
-                                props.colorMode === "blue"
+                                props.colorMode === "sky"
                                   ? "text-white opacity-100 pt-[1px]"
                                   : "opacity-0"
                               }`}

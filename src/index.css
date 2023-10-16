@@ -26,7 +26,8 @@ code {
 }
 
 .imageLink {
-  width: 450px;
+  width: 210px;
+  y: 20px;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -49,4 +50,54 @@ code {
     background-color: #5b5b5b;
     border-radius: 10px;
     border: 3px solid #cdcdcd;
+  }
+
+
+  .stop-red-500 {
+    stop-color: #ef4444;
+  }
+  .stop-red-400 {
+    stop-color: #f87171;
+  }
+
+  .stop-green-500 {
+    stop-color: #22c55e;
+  }
+  .stop-green-400 {
+    stop-color: #4ade80;
+  }
+
+  .stop-yellow-500 {
+    stop-color: #eab308;
+  }
+  .stop-yellow-400 {
+    stop-color: #facc15;
+  }
+
+  .stop-sky-500 {
+    stop-color: #0ea5e9;
+  }
+  .stop-sky-400 {
+    stop-color: #38bdf8;
+  }
+
+  .stop-fuchsia-500 {
+    stop-color: #d946ef;
+  }
+  .stop-fuchsia-400 {
+    stop-color: #e879f9;
+  }
+
+  .stop-indigo-500 {
+    stop-color: #6366f1;
+  }
+  .stop-indigo-400 {
+    stop-color: #818cf8;
+  }
+
+  .stop-slate-500 {
+    stop-color: #64748b;
+  }
+  .stop-slate-400 {
+    stop-color: #94a3b8;
   }

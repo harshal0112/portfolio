@@ -33,7 +33,7 @@ const WorkX = (props) => {
 
   return (
     <section ref={workRef} id="work">
-      <div className="mx-auto max-w-screen-lg px-4 py-36 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-lg px-4 py-16 md:py-36 sm:px-6 lg:px-8">
         <motion.div
           className="text-center text-5xl font-bold mb-2"
           variants={textAnimate}

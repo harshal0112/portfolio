@@ -6,6 +6,7 @@ import { AiOutlineSend } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { useNav } from "./hooks/useNav";
+import SVGComponent from "./SVGComponent";
 
 function Home(props) {
   const [textIndex, setTextIndex] = useState(0);
@@ -128,42 +129,7 @@ function Home(props) {
             </motion.div>
           </div>
           <div className="flex items-center flex-col gap-0 md:gap-10 lg:gap-28 md:flex-row">
-            <div className="flex md:hidden items-center container">
-              <div className="">
-                <motion.div
-                  className={`social-icons flex flex-col gap-8 text-xl ${props.textColorMode}`}
-                  variants={animateHomeText}
-                  initial="hidden"
-                  whileInView="visible"
-                >
-                  <button className={props.textColorMode}>
-                    <FaLinkedinIn />
-                  </button>
-                  <button className={props.textColorMode}>
-                    <FaGithub />
-                  </button>
-                  <button className={props.textColorMode}>
-                    <FaInstagram />
-                  </button>
-                </motion.div>
-              </div>
-              <motion.div
-                variants={animateX}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <div
-                  className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r ${props.picBgColorMode} overflow-hidden flex items-center justify-center shadow-md scale-75 md:scale-100 md:hidden ${props.shadowColorMode}`}
-                >
-                  <img
-                    src="https://i.ibb.co/ph5w74q/pnge.png"
-                    alt="/"
-                    className="imageLink"
-                  />
-                </div>
-              </motion.div>
-            </div>
-            <div className="leading-loose tracking-widest">
+            <div className="leading-loose tracking-widest order-2">
               <motion.div
                 className="text-5xl font-bold lg:flex md:block sm:flex drop-shadow-lg"
                 variants={animateHomeText}
@@ -275,23 +241,42 @@ function Home(props) {
                 </button>
               </Link>
             </div>
-            <motion.div
-              className="hidden md:block"
-              variants={animateX}
-              initial="hidden"
-              whileInView="visible"
-            >
-              <div
-                className={`h-[340px] w-[350px] pic-bg bg-gradient-to-r ${props.picBgColorMode} overflow-hidden flex items-center justify-center shadow-md scale-75 md:scale-100 ${props.shadowColorMode}`}
-                ref={containerRef}
-              >
-                <img
-                  src="https://i.ibb.co/ph5w74q/pnge.png"
-                  alt="/"
-                  className="imageLink"
-                />
+            <div className="flex order-1 md:order-last">
+              <div className="flex md:hidden items-center container">
+                <div className="">
+                  <motion.div
+                    className={`social-icons flex flex-col gap-8 text-xl ${props.textColorMode}`}
+                    variants={animateHomeText}
+                    initial="hidden"
+                    whileInView="visible"
+                  >
+                    <button className={props.textColorMode}>
+                      <FaLinkedinIn />
+                    </button>
+                    <button className={props.textColorMode}>
+                      <FaGithub />
+                    </button>
+                    <button className={props.textColorMode}>
+                      <FaInstagram />
+                    </button>
+                  </motion.div>
+                </div>
               </div>
-            </motion.div>
+
+              <motion.div
+                className=""
+                variants={animateX}
+                initial="hidden"
+                whileInView="visible"
+              >
+                <div ref={containerRef}>
+                  <SVGComponent
+                    svgColorMode1={props.svgColorMode1}
+                    svgColorMode2={props.svgColorMode2}
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>

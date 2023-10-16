@@ -17,16 +17,12 @@ const Services = (props) => {
 
   const servicesAnimate = {
     hidden: {
+      y: 100,
       opacity: 0,
-      scale: 0,
     },
     visible: {
+      y: 0,
       opacity: 1,
-      scale: 1,
-      transition: {
-        delay: 0.3,
-        type: "spring",
-      },
     },
   };
   return (
@@ -56,6 +52,10 @@ const Services = (props) => {
             variants={servicesAnimate}
             initial="hidden"
             whileInView="visible"
+            transition={{
+              type: "tween",
+              delay: 0.3,
+            }}
           >
             <div className="pl-4 pr-12 sm:px-8 py-4">
               <div
@@ -84,6 +84,10 @@ const Services = (props) => {
             variants={servicesAnimate}
             initial="hidden"
             whileInView="visible"
+            transition={{
+              type: "tween",
+              delay: 0.5,
+            }}
           >
             <div className="pl-4 pr-12 sm:px-8 py-4">
               <div
@@ -113,6 +117,10 @@ const Services = (props) => {
             variants={servicesAnimate}
             initial="hidden"
             whileInView="visible"
+            transition={{
+              type: "tween",
+              delay: 0.7,
+            }}
           >
             <div className="pl-4 pr-12 sm:px-8 py-4">
               <div

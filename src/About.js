@@ -47,27 +47,11 @@ function About(props) {
     },
   };
 
-  const bgColorMode = `${
-    props.colorMode === "red"
-      ? "bg-red-500"
-      : props.colorMode === "green"
-      ? "bg-green-500"
-      : props.colorMode === "yellow"
-      ? "bg-yellow-500"
-      : props.colorMode === "blue"
-      ? "bg-blue-500"
-      : props.colorMode === "fuchsia"
-      ? "bg-fuchsia-500"
-      : props.colorMode === "slate"
-      ? "bg-slate-500"
-      : "bg-indigo-500"
-  }`;
-
   return (
     <div>
       <div
         ref={aboutRef}
-        className={`min-h-screen flex justify-center items-center py-10 w-full text-6xl snap-start`}
+        className={`min-h-screen flex justify-center items-center pb-16 md:pb-0 w-full text-6xl snap-start`}
         id="about"
       >
         <div className="w-full flex justify-center items-center flex-col gap-2">
@@ -137,7 +121,7 @@ function About(props) {
                 whileInView="visible"
               >
                 <button
-                  className={`flex items-center p-4 ${bgColorMode} rounded-lg shadow-md active:scale-95 hover:contrast-150 ${props.shadowColorMode}`}
+                  className={`flex items-center p-4 ${props.bgColorMode} rounded-lg shadow-md active:scale-95 hover:contrast-150 ${props.shadowColorMode}`}
                   onClick={() => handleDownload()}
                 >
                   Download CV&nbsp;
