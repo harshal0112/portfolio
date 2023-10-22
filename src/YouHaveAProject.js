@@ -29,15 +29,18 @@ function YouHaveAProject(props) {
               Contact me now and get a 30% discount on your new project.{" "}
             </div>
             <button
-              className={`bg-gray-100 ${props.textColorMode} rounded-md w-fit`}
+              className={`bg-gray-100 ${props.textColorMode} group py-3 px-6 rounded-full flex items-center gap-2  shadow-md active:scale-95 transition-all transform hover:contrast-150`}
               onClick={() =>
                 document
                   .getElementById("contact")
                   .scrollIntoView({ behavior: "smooth" })
               }
             >
-              <div className="flex items-center px-4 py-[14px]">
-                Contact Me &nbsp;
+              <div>Contact Me</div>
+              <div className="opacity-0">
+                <AiOutlineSend />
+              </div>
+              <div className="absolute end-6 group-hover:end-5 transition-all duration-200">
                 <AiOutlineSend />
               </div>
             </button>

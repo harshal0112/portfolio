@@ -6,11 +6,12 @@ import { FiCheck } from "react-icons/fi";
 import { BsCloudsFill, BsMoonFill, BsStars, BsSunFill } from "react-icons/bs";
 
 function Navbar(props) {
+  const { activeLinkId, setActiveLinkId } = useContext(NavContext);
+
   const handleNavClick = (event) => {
     document.getElementById(event).scrollIntoView({ behavior: "smooth" });
+    setActiveLinkId(event);
   };
-
-  const { activeLinkId } = useContext(NavContext);
 
   const [settingClick, setSettingClick] = useState("inactive");
 
@@ -255,7 +256,7 @@ function Navbar(props) {
                   <AnimatePresence>
                     {settingClick === "active" && (
                       <motion.div
-                        className={`flex flex-col absolute z-50 -end-4 top-7 bg-opacity-95 border-2 border-t-0 rounded-[15px] py-2 px-1 ${
+                        className={`flex flex-col  absolute z-50 -end-4 top-7 bg-opacity-95 border-2 border-t-0 rounded-[15px] py-2 px-1 ${
                           props.mode === "dark"
                             ? "bg-gradient-to-r from-gray-700/50 to-gray-800/50 backdrop-blur-md text-gray-50 border-gray-800/50"
                             : "bg-gradient-to-r from-gray-200/50 to-gray-400/50 backdrop-blur-md border-gray-400/20"

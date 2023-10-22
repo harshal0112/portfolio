@@ -32,7 +32,7 @@ function Contact(props) {
         className={`w-full min-h-screen flex items-center justify-center text-6xl snap-center`}
         id="contact"
       >
-        <div className="h-auto py-5 md:py-20 w-full text-6xl snap-start">
+        <div className="h-auto py-5 md:pt-24 w-full text-6xl snap-start">
           <div className="w-full flex justify-center items-center flex-col gap-4">
             <motion.h1
               className="text-5xl font-bold"
@@ -146,11 +146,15 @@ function Contact(props) {
                   ></textarea>
                 </div>
                 <button
-                  className={`${props.bgColorMode} p-4 flex justify-center items-center rounded-lg text-white active:scale-95 transition-all shadow-md hover:contrast-150 ${props.shadowColorMode}`}
+                  className={`${props.bgColorMode} group py-3 px-6 justify-center rounded-full text-white flex items-center gap-2 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.shadowColorMode}`}
                   type="submit"
                 >
-                  <div className="flex items-center gap-2">
-                    Send Message <AiOutlineSend />
+                  <div className="">Send Message</div>
+                  <div className="opacity-0">
+                    <AiOutlineSend />
+                  </div>
+                  <div className="absolute  end-12 group-hover:end-11 transition-all duration-200">
+                    <AiOutlineSend />
                   </div>
                 </button>
               </form>

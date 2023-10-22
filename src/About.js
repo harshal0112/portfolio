@@ -91,9 +91,9 @@ function About(props) {
                 initial="hidden"
                 whileInView="visible2"
               >
-                Web developer with extensive knowledge and years of experience,
-                working in web technologies and Ui/Ux design, delivering quality
-                work.
+                I am a dedicated full-stack developer with a passion for
+                crafting user-friendly digital solutions. Join me on my journey
+                through the world of technology as we turn ideas into reality.
               </motion.div>
               <motion.div
                 className="grid text-base grid-cols-3"
@@ -101,18 +101,18 @@ function About(props) {
                 initial="hidden"
                 whileInView="visible"
               >
-                <div className="flex flex-col items-center justify-center text-center">
+                {/* <div className="flex flex-col items-center justify-center text-center">
                   <div className="text-2xl font-bold">08+</div>
                   <div className="opacity-70">Years experience</div>
-                </div>
+                </div> */}
                 <div className="flex flex-col items-center justify-center text-center">
-                  <div className="text-2xl font-bold">20+</div>
+                  <div className=" text-2xl font-bold">20+</div>
                   <div className="opacity-70">Completed projects</div>
                 </div>
-                <div className="flex flex-col items-center justify-center text-center">
+                {/* <div className="flex flex-col items-center justify-center text-center">
                   <div className="text-2xl font-bold">05+</div>
                   <div className="opacity-70 text-base">Companies worked</div>
-                </div>
+                </div> */}
               </motion.div>
               <motion.div
                 className="text-base text-white"
@@ -121,11 +121,16 @@ function About(props) {
                 whileInView="visible"
               >
                 <button
-                  className={`flex items-center p-4 ${props.bgColorMode} rounded-lg shadow-md active:scale-95 hover:contrast-150 ${props.shadowColorMode}`}
+                  className={`${props.bgColorMode} group py-3 px-6 rounded-full text-white flex items-center gap-1 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.shadowColorMode}`}
                   onClick={() => handleDownload()}
                 >
                   Download CV&nbsp;
-                  <AiOutlineDownload />
+                  <div className="opacity-0">
+                    <AiOutlineDownload />
+                  </div>
+                  <div className="absolute end-6 group-hover:animate-bounce group-hover:bottom-[18px] transition-all duration-200">
+                    <AiOutlineDownload />
+                  </div>
                 </button>
               </motion.div>
             </div>

@@ -33,5 +33,12 @@
         "imageSrc" : "https://i.ibb.co/wC2Fn9T/Spotify-Clone.png",
         "href": "https://harshal0112.github.io/spotifyclone/",
         "description": "A Spotify website clone made with HTML and CSS is a web application that replicates the look and feel of the original Spotify website."
+    },
+    {
+        "name": "Portfolio - Website",
+        "id" : 6,
+        "imageSrc" : "https://i.ibb.co/VWwdYRL/Port-Folio.png",
+        "href": "https://harshalsportfolio.vercel.app/",
+        "description": "Explore my latest portfolio project, a stunning website built with React and styled using Tailwind CSS combining sleek design with a smooth user experience."
     }
 ]}

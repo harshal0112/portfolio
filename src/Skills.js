@@ -113,7 +113,7 @@ function Skills(props) {
                       ></motion.div>
                     </div>
                   </div>
-                  <div className="flex w-full justify-between flex-col gap-1">
+                  <div className="flex w-full  justify-between flex-col gap-1">
                     <div className="flex justify-between w-full">
                       JavaScript<div>60%</div>
                     </div>
@@ -156,7 +156,7 @@ function Skills(props) {
                   <div className="flex flex-col">
                     Backend Developer{" "}
                     <div className="text-sm font-normal opacity-60">
-                      More than 3 years
+                      More than 1 years
                     </div>
                   </div>
                 </div>
@@ -254,7 +254,7 @@ function Skills(props) {
                   <div className="flex flex-col">
                     Website Designer{" "}
                     <div className="text-sm font-normal opacity-60">
-                      More than 3 years
+                      More than 1 years
                     </div>
                   </div>
                 </div>

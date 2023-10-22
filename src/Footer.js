@@ -36,13 +36,13 @@ function Footer(props) {
             </div>
           </div>
           <div className="flex gap-8 text-xl">
-            <div className="hover:text-[#1d9bf0] cursor-pointer rounded-full">
+            <div className="hover:text-[#0866ff] cursor-pointer p-1 rounded-full hover:bg-white">
               <FaFacebook />
             </div>
-            <div className="cursor-pointer hover:text-[#f6076e]">
+            <div className=" cursor-pointer hover:text-[#f6076e] p-1 rounded-md hover:bg-white">
               <FaInstagram />
             </div>
-            <div className="cursor-pointer hover:text-[#1d9bf0]">
+            <div className="cursor-pointer hover:text-[#1d9bf0] p-1 rounded-full hover:bg-white">
               <FaTwitter />
             </div>
           </div>

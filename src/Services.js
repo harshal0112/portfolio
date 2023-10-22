@@ -54,7 +54,7 @@ const Services = (props) => {
             whileInView="visible"
             transition={{
               type: "tween",
-              delay: 0.3,
+              duration: 0.3,
             }}
           >
             <div className="pl-4 pr-12 sm:px-8 py-4">
@@ -86,7 +86,7 @@ const Services = (props) => {
             whileInView="visible"
             transition={{
               type: "tween",
-              delay: 0.5,
+              duration: 0.5,
             }}
           >
             <div className="pl-4 pr-12 sm:px-8 py-4">
@@ -112,14 +112,14 @@ const Services = (props) => {
             className={`sm-min-w-[250px] sm-min-h-[320px] rounded-[15px] overflow-hidden border-2 shadow-lg ${
               props.mode === "dark"
                 ? "bg-gradient-to-b from-gray-500/30 to-gray-800/30 backdrop-blur-md text-gray-50 border-gray-800/30"
-                : "bg-gradient-to-b from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
+                : "bg-gradient-to-b  from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
             }`}
             variants={servicesAnimate}
             initial="hidden"
             whileInView="visible"
             transition={{
               type: "tween",
-              delay: 0.7,
+              duration: 0.7,
             }}
           >
             <div className="pl-4 pr-12 sm:px-8 py-4">

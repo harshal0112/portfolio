@@ -45,7 +45,7 @@ function Education(props) {
             My educational journey
           </motion.p>
           <div className="flex flex-col md:flex-row mt-24">
-            <div className=" h-[350px] w-auto flex items-center justify-center px-5">
+            <div className=" h-[350px] w-auto  flex items-center justify-center px-5">
               <motion.div
                 className={`h-full w-[1px] ${props.bgColorMode} flex flex-col items-center justify-between relative`}
                 variants={textAnimate}
@@ -59,7 +59,7 @@ function Education(props) {
                     className="h-24 w-40 absolute right-1"
                     initial={{ x: 100, opacity: 0, scale: 0 }}
                     whileInView={{ x: 0, opacity: 1, scale: 1 }}
-                    transition={{ type: "tween", duration: 0.3 }}
+                    transition={{ type: "tween", duration: 0.5 }}
                   >
                     <div className="font-bold text-lg">SSC</div>
                     <div className="text-base opacity-70">MSBSHSE Pune</div>
@@ -75,7 +75,7 @@ function Education(props) {
                     className="h-24 w-40 absolute left-8"
                     initial={{ x: -130, opacity: 0, scale: 0 }}
                     whileInView={{ x: 0, opacity: 1, scale: 1 }}
-                    transition={{ type: "tween", duration: 0.3 }}
+                    transition={{ type: "tween", duration: 0.5 }}
                   >
                     <div className="font-bold text-lg">HSC</div>
                     <div className="text-base opacity-70">MSBSHSE Pune</div>
@@ -91,7 +91,7 @@ function Education(props) {
                     className="h-24 w-40 absolute right-1"
                     initial={{ x: 100, opacity: 0, scale: 0 }}
                     whileInView={{ x: 0, opacity: 1, scale: 1 }}
-                    transition={{ type: "tween", duration: 0.3 }}
+                    transition={{ type: "tween", duration: 0.5 }}
                   >
                     <div className="font-bold text-lg">Comp. Eng. Dip.</div>
                     <div className="text-base opacity-70">MSBTE Mumbai</div>
@@ -107,7 +107,7 @@ function Education(props) {
                     className="h-24 w-40 absolute left-8"
                     initial={{ x: -130, opacity: 0, scale: 0 }}
                     whileInView={{ x: 0, opacity: 1, scale: 1 }}
-                    transition={{ type: "tween", duration: 0.3 }}
+                    transition={{ type: "tween", duration: 0.5 }}
                   >
                     <div className="font-bold text-lg">B. Tech (ENTC)</div>
                     <div className="text-base opacity-70">SPPU Pune</div>
@@ -123,7 +123,7 @@ function Education(props) {
                     className="h-24 w-40 absolute right-1"
                     initial={{ x: 100, opacity: 0, scale: 0 }}
                     whileInView={{ x: 0, opacity: 1, scale: 1 }}
-                    transition={{ type: "tween", duration: 0.3 }}
+                    transition={{ type: "tween", duration: 0.5 }}
                   >
                     <div className="font-bold text-lg">MCA</div>
                     <div className="text-base opacity-70">IGNOU</div>

@@ -82,8 +82,8 @@ function Home(props) {
       const { left, top, width, height } = container.getBoundingClientRect();
       const x = event.clientX - left;
       const y = event.clientY - top;
-      const rotateX = (y - height / 2) / 40;
-      const rotateY = (x - width / 2) / 40;
+      const rotateX = (y - height / 2) / 20;
+      const rotateY = (x - width / 2) / 20;
 
       container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
@@ -170,8 +170,8 @@ function Home(props) {
                 initial="hidden"
                 whileInView="visible"
               >
-                High level experience in web design and development knowledge,
-                producing quality work.
+                A passionate full-stack developer with a love for coding and
+                creating digital solutions.
               </motion.div>
               <br />
               <motion.div
@@ -180,14 +180,20 @@ function Home(props) {
                 whileInView="visible"
               >
                 <button
-                  className={`${props.bgColorMode} py-[10px] px-3 rounded-lg text-white flex items-center gap-2 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.shadowColorMode}`}
+                  className={`${props.bgColorMode} group  py-[10px] px-6 rounded-full text-white flex items-center gap-2 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.shadowColorMode}`}
                   onClick={() =>
                     document
                       .getElementById("contact")
                       .scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  Contact Me <AiOutlineSend />
+                  <div className="">Contact Me</div>
+                  <div className="opacity-0">
+                    <AiOutlineSend />
+                  </div>
+                  <div className="absolute end-6 group-hover:end-5 transition-all duration-200">
+                    <AiOutlineSend />
+                  </div>
                 </button>
               </motion.div>
               <br />

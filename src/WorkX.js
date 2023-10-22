@@ -77,10 +77,13 @@ const WorkX = (props) => {
                       className="w-fit"
                     >
                       <button
-                        className={`py-3 px-4 ${props.bgColorMode} w-fit rounded-md shadow-md ${props.shadowColorMode}`}
+                        className={`group py-[10px] px-6 rounded-full text-white flex items-center gap-2 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.bgColorMode} ${props.shadowColorMode}`}
                       >
-                        <div className="flex items-center text-white text-base font-semibold">
-                          Demo &nbsp;
+                        Demo
+                        <div className="absolute end-6  group-hover:end-5 transition-all duration-200">
+                          <HiArrowSmRight />
+                        </div>
+                        <div className="opacity-0">
                           <HiArrowSmRight />
                         </div>
                       </button>
