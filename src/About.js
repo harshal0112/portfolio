@@ -48,8 +48,8 @@ function About(props) {
   };
 
   return (
-    <div>
-      <div
+    <>
+      <section
         ref={aboutRef}
         className={`min-h-screen flex justify-center items-center pb-16 md:pb-0 w-full text-6xl snap-start`}
         id="about"
@@ -136,8 +136,8 @@ function About(props) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
 

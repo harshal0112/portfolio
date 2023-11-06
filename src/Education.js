@@ -21,8 +21,8 @@ function Education(props) {
   };
 
   return (
-    <div>
-      <div
+    <>
+      <section
         ref={educationRef}
         className={`min-h-screen pb-20 md:pb-0 w-full flex justify-center items-center text-6xl snap-start`}
         id="education"
@@ -136,8 +136,8 @@ function Education(props) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
 

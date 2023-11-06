@@ -26,8 +26,8 @@ const Services = (props) => {
     },
   };
   return (
-    <div>
-      <div
+    <>
+      <section
         className={`min-h-screen py-16 w-full flex flex-col justify-center items-center text-6xl snap-start gap-10 px-2`}
         id="services"
       >
@@ -52,6 +52,7 @@ const Services = (props) => {
             variants={servicesAnimate}
             initial="hidden"
             whileInView="visible"
+            animate="hidden"
             transition={{
               type: "tween",
               duration: 0.3,
@@ -84,6 +85,7 @@ const Services = (props) => {
             variants={servicesAnimate}
             initial="hidden"
             whileInView="visible"
+            animate="hidden"
             transition={{
               type: "tween",
               duration: 0.5,
@@ -117,6 +119,7 @@ const Services = (props) => {
             variants={servicesAnimate}
             initial="hidden"
             whileInView="visible"
+            animate="hidden"
             transition={{
               type: "tween",
               duration: 0.7,
@@ -141,8 +144,8 @@ const Services = (props) => {
             </div>
           </motion.div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

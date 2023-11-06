@@ -15,8 +15,8 @@ function YouHaveAProject(props) {
     },
   };
   return (
-    <div>
-      <div className="w-full h-full flex items-center justify-center py-6">
+    <>
+      <section className="w-full h-full flex items-center justify-center py-6">
         <motion.div
           className={`flex flex-col sm:flex-row md:rounded-xl px-8 py-10 md:py-4 bg-gradient-to-r ${props.picBgColorMode} w-full md:w-auto overflow-hidden items-center`}
           variants={cardAnimate}
@@ -53,8 +53,8 @@ function YouHaveAProject(props) {
             />
           </div>
         </motion.div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
 

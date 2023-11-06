@@ -112,18 +112,42 @@ function Home(props) {
         <div className="container mx-auto px-4 flex items-center justify-center h-[100vh] relative pb-14 md:pb-0">
           <div className=" hidden md:mr-28 lg:block">
             <motion.div
-              className={`social-icons flex flex-col gap-8 text-xl ${props.textColorMode}`}
+              className={`social-icons flex flex-col gap-5 text-xl ${props.textColorMode}`}
               variants={animateHomeText}
               initial="hidden"
               whileInView="visible"
             >
-              <button className={props.textColorMode}>
+              <button
+                className={`${
+                  props.textColorMode
+                } border border-transparent hover:contrast-150 p-1 ${
+                  props.mode === "dark"
+                    ? "hover:border-gray-600"
+                    : "hover:border-gray-400"
+                } hover:shadow rounded`}
+              >
                 <FaLinkedinIn />
               </button>
-              <button className={props.textColorMode}>
+              <button
+                className={`${
+                  props.textColorMode
+                } border border-transparent hover:contrast-150 p-1 ${
+                  props.mode === "dark"
+                    ? "hover:border-gray-600"
+                    : "hover:border-gray-400"
+                } hover:shadow rounded`}
+              >
                 <FaGithub />
               </button>
-              <button className={props.textColorMode}>
+              <button
+                className={`${
+                  props.textColorMode
+                } border border-transparent hover:contrast-150 p-1 ${
+                  props.mode === "dark"
+                    ? "hover:border-gray-600"
+                    : "hover:border-gray-400"
+                } hover:shadow rounded`}
+              >
                 <FaInstagram />
               </button>
             </motion.div>
@@ -199,18 +223,42 @@ function Home(props) {
               <br />
               <div className="hidden md:block lg:hidden">
                 <motion.div
-                  className={`social-icons flex gap-8 text-xl ${props.textColorMode}`}
+                  className={`social-icons flex gap-5 text-xl ${props.textColorMode}`}
                   variants={animateHomeText}
                   initial="hidden"
                   whileInView="visible"
                 >
-                  <button className={props.textColorMode}>
+                  <button
+                    className={`${
+                      props.textColorMode
+                    } border border-transparent hover:contrast-150 p-1 ${
+                      props.mode === "dark"
+                        ? "hover:border-gray-600"
+                        : "hover:border-gray-400"
+                    } hover:shadow rounded`}
+                  >
                     <FaLinkedinIn />
                   </button>
-                  <button className={props.textColorMode}>
+                  <button
+                    className={`${
+                      props.textColorMode
+                    } border border-transparent hover:contrast-150 p-1 ${
+                      props.mode === "dark"
+                        ? "hover:border-gray-600"
+                        : "hover:border-gray-400"
+                    } hover:shadow rounded`}
+                  >
                     <FaGithub />
                   </button>
-                  <button className={props.textColorMode}>
+                  <button
+                    className={`${
+                      props.textColorMode
+                    } border border-transparent hover:contrast-150 p-1 ${
+                      props.mode === "dark"
+                        ? "hover:border-gray-600"
+                        : "hover:border-gray-400"
+                    } hover:shadow rounded`}
+                  >
                     <FaInstagram />
                   </button>
                 </motion.div>
@@ -223,10 +271,10 @@ function Home(props) {
                 offset={0}
               >
                 <button
-                  className={`hidden md:flex items-center absolute bottom-10 text-sm p-2 rounded-xl ${
+                  className={`hidden md:flex items-center absolute bottom-10 text-sm p-2 rounded-xl border border-transparent ${
                     props.mode === "dark"
-                      ? "hover:bg-gray-700 hover:bg-opacity-50"
-                      : "hover:bg-slate-200 hover:bg-opacity-50"
+                      ? "hover:bg-slate-800 hover:bg-opacity-50 hover:border-gray-800"
+                      : "hover:bg-slate-300 hover:bg-opacity-50 hover:border-gray-300 "
                   }`}
                 >
                   <div className={`${props.textColorMode} text-2xl`}>
@@ -279,6 +327,7 @@ function Home(props) {
                   <SVGComponent
                     svgColorMode1={props.svgColorMode1}
                     svgColorMode2={props.svgColorMode2}
+                    svgShadow={props.svgShadow}
                   />
                 </div>
               </motion.div>

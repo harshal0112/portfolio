@@ -105,6 +105,22 @@ function App() {
       : "stop-indigo-400"
   }`;
 
+  const svgShadow = `${
+    colorMode === "red"
+      ? "drop-shadow-[0_6px_6px_rgba(127,29,29,1)]"
+      : colorMode === "green"
+      ? "drop-shadow-[0_6px_6px_rgba(20,83,45,1)]"
+      : colorMode === "yellow"
+      ? "drop-shadow-[0_6px_6px_rgba(113,63,18,1)]"
+      : colorMode === "sky"
+      ? "drop-shadow-[0_6px_6px_rgba(12,74,110,1)]"
+      : colorMode === "fuchsia"
+      ? "drop-shadow-[0_6px_6px_rgba(112,26,117,1)]"
+      : colorMode === "slate"
+      ? "drop-shadow-[0_6px_6px_rgba(15,23,42,1)]"
+      : "drop-shadow-[0_6px_6px_rgba(49,46,129,1)]"
+  }`;
+
   const bgColorMode = `${
     colorMode === "red"
       ? "bg-red-500"
@@ -177,7 +193,7 @@ function App() {
             mode === "dark"
               ? "bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 text-gray-50"
               : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100"
-          }`}
+          } duration-200`}
         >
           <Navbar
             mode={mode}
@@ -195,6 +211,7 @@ function App() {
             shadowColorMode={shadowColorMode}
             svgColorMode1={svgColorMode1}
             svgColorMode2={svgColorMode2}
+            svgShadow={svgShadow}
           />
           <About
             mode={mode}

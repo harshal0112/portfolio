@@ -24,8 +24,8 @@ function Skills(props) {
   };
 
   return (
-    <div>
-      <div
+    <>
+      <section
         ref={skillsRef}
         className={`w-full min-h-screen flex justify-center items-center pb-12 md:pb-0 text-6xl snap-center`}
         id="skills"
@@ -418,8 +418,8 @@ function Skills(props) {
             </motion.div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
 

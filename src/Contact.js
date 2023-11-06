@@ -26,8 +26,8 @@ function Contact(props) {
   };
 
   return (
-    <div>
-      <div
+    <>
+      <section
         ref={contactRef}
         className={`w-full min-h-screen flex items-center justify-center text-6xl snap-center`}
         id="contact"
@@ -161,8 +161,8 @@ function Contact(props) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
 

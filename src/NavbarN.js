@@ -189,7 +189,10 @@ function Navbar(props) {
                   </button>
                 </div>
                 <div
-                  className={`flex items-center self-center ${props.bgColorMode} bg-opacity-75 w-12 rounded-full h-5 relative`}
+                  className={`flex items-center cursor-pointer self-center ${props.bgColorMode} bg-opacity-75 w-12 rounded-full h-5 relative`}
+                  onClick={() =>
+                    props.setMode(props.mode === "light" ? "dark" : "light")
+                  }
                 >
                   <button
                     className="flex items-center"
@@ -256,7 +259,7 @@ function Navbar(props) {
                   <AnimatePresence>
                     {settingClick === "active" && (
                       <motion.div
-                        className={`flex flex-col  absolute z-50 -end-4 top-7 bg-opacity-95 border-2 border-t-0 rounded-[15px] py-2 px-1 ${
+                        className={`flex flex-col absolute z-50 -end-4 top-7 bg-opacity-95 border-2 border-t-0 rounded-[15px] py-2 px-1 select-none ${
                           props.mode === "dark"
                             ? "bg-gradient-to-r from-gray-700/50 to-gray-800/50 backdrop-blur-md text-gray-50 border-gray-800/50"
                             : "bg-gradient-to-r from-gray-200/50 to-gray-400/50 backdrop-blur-md border-gray-400/20"
@@ -292,7 +295,7 @@ function Navbar(props) {
                           }`}
                         ></div>
                         <div
-                          className={`pb-1 mb-1 px-2 pointer-events-none select-none border-b-2 whitespace-nowrap overflow-hidden ${
+                          className={`pb-1 mb-1 px-2 pointer-events-none border-b-2 whitespace-nowrap overflow-hidden ${
                             props.mode === "dark"
                               ? "border-white"
                               : "border-black"
@@ -301,13 +304,17 @@ function Navbar(props) {
                           Change Theme
                         </div>
                         <div
-                          className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
+                          className={`flex justify-between duration-300 items-center overflow-hidden cursor-pointer px-[6px] rounded-md ${
+                            props.mode === "dark"
+                              ? "hover:bg-gray-500/40"
+                              : "hover:bg-gray-700/30"
+                          } ${
                             props.colorMode === "indigo"
                               ? `text-indigo-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
-                                } rounded-md`
+                                }`
                               : ""
                           }`}
                           onClick={() => props.setColorMode("indigo")}
@@ -324,13 +331,17 @@ function Navbar(props) {
                           </div>
                         </div>
                         <div
-                          className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
+                          className={`flex justify-between duration-300 items-center overflow-hidden cursor-pointer px-[6px] rounded-md ${
+                            props.mode === "dark"
+                              ? "hover:bg-gray-500/40"
+                              : "hover:bg-gray-700/30"
+                          } ${
                             props.colorMode === "red"
                               ? `text-red-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
-                                } rounded-md`
+                                }`
                               : ""
                           }`}
                           onClick={() => props.setColorMode("red")}
@@ -347,13 +358,17 @@ function Navbar(props) {
                           </div>
                         </div>
                         <div
-                          className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
+                          className={`flex justify-between duration-300 items-center overflow-hidden cursor-pointer px-[6px] rounded-md ${
+                            props.mode === "dark"
+                              ? "hover:bg-gray-500/40"
+                              : "hover:bg-gray-700/30"
+                          } ${
                             props.colorMode === "green"
                               ? `text-green-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
-                                } rounded-md`
+                                }`
                               : ""
                           }`}
                           onClick={() => props.setColorMode("green")}
@@ -370,13 +385,17 @@ function Navbar(props) {
                           </div>
                         </div>
                         <div
-                          className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
+                          className={`flex justify-between duration-300 items-center overflow-hidden cursor-pointer px-[6px] rounded-md ${
+                            props.mode === "dark"
+                              ? "hover:bg-gray-500/40"
+                              : "hover:bg-gray-700/30"
+                          } ${
                             props.colorMode === "yellow"
                               ? `text-yellow-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
-                                } rounded-md`
+                                }`
                               : ""
                           }`}
                           onClick={() => props.setColorMode("yellow")}
@@ -393,13 +412,17 @@ function Navbar(props) {
                           </div>
                         </div>
                         <div
-                          className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
+                          className={`flex justify-between duration-300 items-center overflow-hidden cursor-pointer px-[6px] rounded-md ${
+                            props.mode === "dark"
+                              ? "hover:bg-gray-500/40"
+                              : "hover:bg-gray-700/30"
+                          } ${
                             props.colorMode === "sky"
                               ? `text-sky-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
-                                } rounded-md`
+                                }`
                               : ""
                           }`}
                           onClick={() => props.setColorMode("sky")}
@@ -416,13 +439,17 @@ function Navbar(props) {
                           </div>
                         </div>
                         <div
-                          className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
+                          className={`flex justify-between duration-300 items-center overflow-hidden cursor-pointer px-[6px] rounded-md ${
+                            props.mode === "dark"
+                              ? "hover:bg-gray-500/40"
+                              : "hover:bg-gray-700/30"
+                          } ${
                             props.colorMode === "fuchsia"
                               ? `text-fuchsia-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
-                                } rounded-md`
+                                }`
                               : ""
                           }`}
                           onClick={() => props.setColorMode("fuchsia")}
@@ -439,13 +466,17 @@ function Navbar(props) {
                           </div>
                         </div>
                         <div
-                          className={`flex justify-between items-center overflow-hidden cursor-pointer px-[6px] ${
+                          className={`flex justify-between duration-300 items-center overflow-hidden cursor-pointer px-[6px] rounded-md ${
+                            props.mode === "dark"
+                              ? "hover:bg-gray-500/40"
+                              : "hover:bg-gray-700/30"
+                          } ${
                             props.colorMode === "slate"
                               ? `text-slate-500 ${
                                   props.mode === "dark"
                                     ? "bg-gray-700/40"
                                     : "bg-gray-700/20"
-                                } rounded-md`
+                                }`
                               : ""
                           }`}
                           onClick={() => props.setColorMode("slate")}

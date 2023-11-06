@@ -6,7 +6,7 @@ const SVGComponent = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     width={330}
     height={320}
-    className="scale-75 md:scale-100"
+    className={`scale-75 md:scale-100 ${props.svgShadow}`}
   >
     <defs>
       <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
