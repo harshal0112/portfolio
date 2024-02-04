@@ -153,7 +153,7 @@ function Contact(props) {
                   <div className="opacity-0">
                     <AiOutlineSend />
                   </div>
-                  <div className="absolute  end-12 group-hover:end-11 transition-all duration-200">
+                  <div className="absolute  end-12 group-hover:end-11 group-active:end-12 transition-all duration-200">
                     <AiOutlineSend />
                   </div>
                 </button>

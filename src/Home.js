@@ -120,7 +120,7 @@ function Home(props) {
               <button
                 className={`${
                   props.textColorMode
-                } border border-transparent hover:contrast-150 p-1 ${
+                } hover:text-[#0a66c2] border border-transparent hover:contrast-150 p-1 ${
                   props.mode === "dark"
                     ? "hover:border-gray-600"
                     : "hover:border-gray-400"
@@ -133,8 +133,8 @@ function Home(props) {
                   props.textColorMode
                 } border border-transparent hover:contrast-150 p-1 ${
                   props.mode === "dark"
-                    ? "hover:border-gray-600"
-                    : "hover:border-gray-400"
+                    ? "hover:border-gray-600 hover:text-white"
+                    : "hover:border-gray-400 hover:text-black"
                 } hover:shadow rounded`}
               >
                 <FaGithub />
@@ -142,7 +142,7 @@ function Home(props) {
               <button
                 className={`${
                   props.textColorMode
-                } border border-transparent hover:contrast-150 p-1 ${
+                } hover:text-[#f6076e] border border-transparent hover:contrast-150 p-1 ${
                   props.mode === "dark"
                     ? "hover:border-gray-600"
                     : "hover:border-gray-400"
@@ -215,7 +215,7 @@ function Home(props) {
                   <div className="opacity-0">
                     <AiOutlineSend />
                   </div>
-                  <div className="absolute end-6 group-hover:end-5 transition-all duration-200">
+                  <div className="absolute end-6 group-hover:end-5 group-active:end-6 transition-all duration-200">
                     <AiOutlineSend />
                   </div>
                 </button>
@@ -231,7 +231,7 @@ function Home(props) {
                   <button
                     className={`${
                       props.textColorMode
-                    } border border-transparent hover:contrast-150 p-1 ${
+                    } hover:text-[#0a66c2] border border-transparent hover:contrast-150 p-1 ${
                       props.mode === "dark"
                         ? "hover:border-gray-600"
                         : "hover:border-gray-400"
@@ -244,8 +244,8 @@ function Home(props) {
                       props.textColorMode
                     } border border-transparent hover:contrast-150 p-1 ${
                       props.mode === "dark"
-                        ? "hover:border-gray-600"
-                        : "hover:border-gray-400"
+                        ? "hover:border-gray-600 hover:text-white"
+                        : "hover:border-gray-400 hover:text-black"
                     } hover:shadow rounded`}
                   >
                     <FaGithub />
@@ -253,7 +253,7 @@ function Home(props) {
                   <button
                     className={`${
                       props.textColorMode
-                    } border border-transparent hover:contrast-150 p-1 ${
+                    } hover:text-[#f6076e] border border-transparent hover:contrast-150 p-1 ${
                       props.mode === "dark"
                         ? "hover:border-gray-600"
                         : "hover:border-gray-400"
@@ -297,24 +297,46 @@ function Home(props) {
             </div>
             <div className="flex order-1 md:order-last">
               <div className="flex md:hidden items-center container">
-                <div className="">
-                  <motion.div
-                    className={`social-icons flex flex-col gap-8 text-xl ${props.textColorMode}`}
-                    variants={animateHomeText}
-                    initial="hidden"
-                    whileInView="visible"
+                <motion.div
+                  className={`social-icons flex flex-col gap-8 text-xl ${props.textColorMode}`}
+                  variants={animateHomeText}
+                  initial="hidden"
+                  whileInView="visible"
+                >
+                  <button
+                    className={`${
+                      props.textColorMode
+                    } hover:text-[#0a66c2] border border-transparent hover:contrast-150 p-1 ${
+                      props.mode === "dark"
+                        ? "hover:border-gray-600"
+                        : "hover:border-gray-400"
+                    } hover:shadow rounded`}
                   >
-                    <button className={props.textColorMode}>
-                      <FaLinkedinIn />
-                    </button>
-                    <button className={props.textColorMode}>
-                      <FaGithub />
-                    </button>
-                    <button className={props.textColorMode}>
-                      <FaInstagram />
-                    </button>
-                  </motion.div>
-                </div>
+                    <FaLinkedinIn />
+                  </button>
+                  <button
+                    className={`${
+                      props.textColorMode
+                    } border border-transparent hover:contrast-150 p-1 ${
+                      props.mode === "dark"
+                        ? "hover:border-gray-600 hover:text-white"
+                        : "hover:border-gray-400 hover:text-black"
+                    } hover:shadow rounded`}
+                  >
+                    <FaGithub />
+                  </button>
+                  <button
+                    className={`${
+                      props.textColorMode
+                    } hover:text-[#f6076e] border border-transparent hover:contrast-150 p-1 ${
+                      props.mode === "dark"
+                        ? "hover:border-gray-600"
+                        : "hover:border-gray-400"
+                    } hover:shadow rounded`}
+                  >
+                    <FaInstagram />
+                  </button>
+                </motion.div>
               </div>
 
               <motion.div

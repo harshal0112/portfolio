@@ -1,5 +1,5 @@
 import React from "react";
-import { HiArrowSmRight } from "react-icons/hi";
+import { HiArrowSmRight, HiOutlineExternalLink } from "react-icons/hi";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
@@ -22,12 +22,20 @@ const WorkX = (props) => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+      transition: { type: "tween", duration: 0.3 },
     },
     visible2: {
       opacity: 0.6,
       y: 0,
-      transition: { type: "tween", delay: 0.3, duration: 0.3 },
+      transition: { type: "tween", duration: 0.3 },
+    },
+  };
+
+  const boxAnimate = {
+    hidden: { y: 50 },
+    visible: {
+      y: 0,
+      transition: { type: "tween", duration: 0.3 },
     },
   };
 
@@ -43,57 +51,80 @@ const WorkX = (props) => {
           Projects
         </motion.div>
         <motion.div
-          className="text-center opacity-70 mb-10"
+          className="text-center opacity-70 mb-5"
           variants={textAnimate}
           initial="hidden"
           whileInView="visible2"
         >
           My recent work
         </motion.div>
-        <Swiper
-          className="!overflow-hidden"
-          spaceBetween={50}
-          slidesPerView={1}
-          loop={true}
-          pagination={{ clickable: true, renderBullet, dynamicBullets: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+        <motion.div
+          className={`border-2 rounded-2xl px-2 ${
+            props.mode === "dark"
+              ? "bg-gradient-to-b from-gray-500/30 to-gray-800/30 backdrop-blur-md text-gray-50 border-gray-800/30"
+              : "bg-gradient-to-b from-gray-200/30 to-gray-400/30 backdrop-blur-md border-gray-400/20"
+          }`}
+          variants={boxAnimate}
+          initial="hidden"
+          whileInView="visible"
         >
-          {data.projects.map((product) => (
-            <SwiperSlide key={product.id}>
-              <blockquote className="p-8 cursor-grabbing mb-2 flex flex-col items-center md:flex-row justify-around gap-10">
-                <div className="max-w-44 sm:w-96 rounded-lg overflow-hidden">
-                  <img src={product.imageSrc} alt="" />
-                </div>
-                <div className="max-w-44 md:w-96 flex flex-col justify-center gap-3">
-                  <div className="text-xl font-bold">{product.name}</div>
-                  <div className="text-base opacity-70">
-                    {product.description}
+          <div className="w-full flex items-center justify-end">
+            <button
+              className={`py-[10px] px-6 hover:contrast-150 ${props.textColorMode} drop-shadow underline underline-offset-4 flex items-center gap-2`}
+            >
+              View All <HiOutlineExternalLink />
+            </button>
+          </div>
+          <Swiper
+            className="!overflow-hidden"
+            spaceBetween={50}
+            slidesPerView={1}
+            loop={true}
+            pagination={{ clickable: true, renderBullet, dynamicBullets: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+          >
+            {data.projects.map((product) => (
+              <SwiperSlide key={product.id}>
+                <blockquote className="p-8 cursor-grabbing mb-2 flex flex-col items-center md:flex-row justify-around gap-5">
+                  <div className="max-w-44 sm:w-96 rounded-lg overflow-hidden">
+                    <img src={product.imageSrc} alt="" />
                   </div>
-                  <div>
-                    <a
-                      href={product.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="w-fit"
-                    >
-                      <button
-                        className={`group py-[10px] px-6 rounded-full text-white flex items-center gap-2 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.bgColorMode} ${props.shadowColorMode}`}
+                  <div className="md:w-[2px] md:h-44 w-44 h-[2px] bg-gray-400"></div>
+                  <div className="max-w-44 md:w-96 flex flex-col justify-center gap-3">
+                    <div className="text-xl font-bold">{product.name}</div>
+                    <div className="text-base opacity-70">
+                      {product.description}
+                    </div>
+                    <div>
+                      <a
+                        href={product.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-fit"
                       >
-                        Demo
-                        <div className="absolute end-6  group-hover:end-5 transition-all duration-200">
-                          <HiArrowSmRight />
-                        </div>
-                        <div className="opacity-0">
-                          <HiArrowSmRight />
-                        </div>
-                      </button>
-                    </a>
+                        <button
+                          className={`group py-[10px] px-6 rounded-full text-white flex items-center gap-2 shadow-md active:scale-95 transition-all transform hover:contrast-150 ${props.bgColorMode} ${props.shadowColorMode}`}
+                        >
+                          Demo
+                          <div className="absolute end-6  group-hover:end-5 transition-all duration-200">
+                            <HiArrowSmRight />
+                          </div>
+                          <div className="opacity-0">
+                            <HiArrowSmRight />
+                          </div>
+                        </button>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </blockquote>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                </blockquote>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
     </section>
   );

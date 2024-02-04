@@ -232,7 +232,12 @@ function App() {
             bgColorMode={bgColorMode}
           />
           {/* <Work mode={mode} /> */}
-          <WorkX bgColorMode={bgColorMode} shadowColorMode={shadowColorMode} />
+          <WorkX
+            bgColorMode={bgColorMode}
+            shadowColorMode={shadowColorMode}
+            textColorMode={textColorMode}
+            mode={mode}
+          />
           <Services
             mode={mode}
             colorMode={colorMode}

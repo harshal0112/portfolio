@@ -94,7 +94,9 @@ function Navbar(props) {
         <div className="nav flex items-center py-6 justify-center px-4 lg:px-10 xl:px-14">
           <div className="container flex">
             <div
-              className="flex items-center font-bold cursor-pointer select-none"
+              className={`flex items-center cursor-pointer select-none ${
+                props.mode === "dark" ? "" : "font-semibold"
+              }`}
               style={{ fontFamily: "Tilt Prism" }}
               onClick={() => handleNavClick("home")}
             >

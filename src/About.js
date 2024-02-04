@@ -128,7 +128,7 @@ function About(props) {
                   <div className="opacity-0">
                     <AiOutlineDownload />
                   </div>
-                  <div className="absolute end-6 group-hover:animate-bounce group-hover:bottom-[18px] transition-all duration-200">
+                  <div className="absolute end-6 group-hover:animate-bounce group-hover:bottom-[14px] transition-all duration-200">
                     <AiOutlineDownload />
                   </div>
                 </button>

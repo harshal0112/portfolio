@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 function Footer(props) {
@@ -86,14 +87,14 @@ function Footer(props) {
             <div
               onMouseEnter={() => socialHovered("twitter")}
               onMouseLeave={socialNotHovered}
-              className="cursor-pointer hover:text-[#1da1f2] p-1 rounded-full hover:bg-white"
+              className="cursor-pointer hover:bg-black p-1 rounded-full"
             >
               <motion.div
                 variants={socialAnimate}
                 animate={isSocialHovered === "twitter" ? "hover" : "initial"}
                 transition={{ duration: 0.5 }}
               >
-                <FaTwitter />
+                <FaXTwitter />
               </motion.div>
             </div>
           </div>

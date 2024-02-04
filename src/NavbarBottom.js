@@ -19,8 +19,28 @@ import { BiArrowBack } from "react-icons/bi";
 function NavbarBottom(props) {
   const [isBottomMenu, setIsBottomMenu] = useState("close");
 
-  const [isThemeChooser, setIsThemeChooser] = useState("close");
+  const [isThemeChooser, setIsThemeChooser] = useState("X");
 
+  const settingAnimate = {
+    noAnim: {
+      opacity: 0,
+    },
+    settingAnimation: {
+      x: [-10, -9, 0, 0, 0, 0, 0, -9, -10],
+      opacity: [0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0],
+      transition: { delay: 0.5, duration: 3.5 },
+    },
+  };
+
+  const settingAnimate2 = {
+    noAnim: {
+      opacity: 0,
+    },
+    settingAnimation: {
+      x: 0,
+      opacity: 0,
+    },
+  };
   const handleNavClick = (event) => {
     document.getElementById(event).scrollIntoView({ behavior: "smooth" });
     setIsBottomMenu("close");
@@ -335,11 +355,11 @@ function NavbarBottom(props) {
                 <FaCog />
               </motion.div>
               <motion.div
-                animate={{
-                  x: [-10, -9, 0, 0, 0, 0, 0, -9, -10],
-                  opacity: [0, 0, 1, 1, 1, 1, 1, 0, 0],
-                }}
-                transition={{ delay: 0.5, duration: 3.5 }}
+                variants={
+                  isThemeChooser === "X" ? settingAnimate : settingAnimate2
+                }
+                initial="noAnim"
+                animate="settingAnimation"
               >
                 Settings
               </motion.div>

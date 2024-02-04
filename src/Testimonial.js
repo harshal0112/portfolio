@@ -38,7 +38,11 @@ const Testimonial = (props) => {
             slidesPerView={windowSize > 720 ? 2 : 1}
             loop={true}
             pagination={{ clickable: true, renderBullet, dynamicBullets: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
           >
             <SwiperSlide>
               <blockquote className="p-8 cursor-grabbing mb-2">
